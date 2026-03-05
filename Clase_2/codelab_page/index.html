@@ -1,0 +1,3242 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ingeniería de Software Agéntica | Claude Code & Antigravity</title>
+  <meta name="description"
+    content="Tutorial interactivo estilo Google Codelabs sobre Claude Code y Antigravity para desarrolladores.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Progress Bar -->
+  <div class="progress-bar"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <button class="menu-toggle">☰</button>
+      <span class="header-logo">🤖 Hardcore AI</span>
+      <div class="header-divider"></div>
+      <span class="header-subtitle">Módulo 4 — Ingeniería de Software Agéntica</span>
+    </div>
+    <div class="header-right">
+      <span class="header-badge">⚡ Nivel Intermedio</span>
+      <span class="header-badge time">⏱ 1h 45min</span>
+    </div>
+  </header>
+
+  <!-- Module Tabs -->
+  <div class="module-tabs">
+    <button class="module-tab active" data-module="general"><span class="tab-icon">🟢</span> Módulo General</button>
+    <button class="module-tab" data-module="claude"><span class="tab-icon">🔵</span> Claude Code</button>
+    <button class="module-tab" data-module="antigravity"><span class="tab-icon">🟠</span> Antigravity</button>
+  </div>
+
+  <!-- Layout -->
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <!-- General -->
+      <div class="sidebar-nav-group" data-module="general">
+        <div class="sidebar-section-title">Módulo General</div>
+        <ul class="sidebar-nav">
+          <li class="sidebar-item active" data-step="g1"><span class="step-num">1</span> Bienvenida y Contexto</li>
+          <li class="sidebar-item" data-step="g2"><span class="step-num">2</span> El Bucle Agéntico</li>
+          <li class="sidebar-item" data-step="g3"><span class="step-num">3</span> Del Commit al Artifact</li>
+          <li class="sidebar-item" data-step="g4"><span class="step-num">4</span> Context Engineering</li>
+          <li class="sidebar-item" data-step="g5"><span class="step-num">5</span> Requisitos Técnicos</li>
+        </ul>
+      </div>
+      <!-- Claude Code -->
+      <div class="sidebar-nav-group" data-module="claude" style="display:none">
+        <div class="sidebar-section-title">Claude Code</div>
+        <ul class="sidebar-nav">
+          <li class="sidebar-item active" data-step="c1"><span class="step-num">1</span> Instalación y Setup</li>
+          <li class="sidebar-item" data-step="c2"><span class="step-num">2</span> Modo Interactivo</li>
+          <li class="sidebar-item" data-step="c3"><span class="step-num">3</span> Settings y Permisos</li>
+          <li class="sidebar-item" data-step="c4"><span class="step-num">4</span> Memoria: CLAUDE.md</li>
+          <li class="sidebar-item" data-step="c5"><span class="step-num">5</span> Flujos de Trabajo</li>
+          <li class="sidebar-item" data-step="c6"><span class="step-num">6</span> MCP</li>
+          <li class="sidebar-item" data-step="c7"><span class="step-num">7</span> Skills</li>
+          <li class="sidebar-item" data-step="c8"><span class="step-num">8</span> Hooks</li>
+          <li class="sidebar-item" data-step="c9"><span class="step-num">9</span> Subagentes</li>
+          <li class="sidebar-item" data-step="c10"><span class="step-num">10</span> Headless y CI/CD</li>
+          <li class="sidebar-item" data-step="c11"><span class="step-num">11</span> Agent Teams</li>
+        </ul>
+      </div>
+      <!-- Antigravity -->
+      <div class="sidebar-nav-group" data-module="antigravity" style="display:none">
+        <div class="sidebar-section-title">Antigravity</div>
+        <ul class="sidebar-nav">
+          <li class="sidebar-item active" data-step="a1"><span class="step-num">1</span> ¿Qué es Antigravity?</li>
+          <li class="sidebar-item" data-step="a2"><span class="step-num">2</span> Instalación y Setup</li>
+          <li class="sidebar-item" data-step="a3"><span class="step-num">3</span> Navegación Básica</li>
+          <li class="sidebar-item" data-step="a4"><span class="step-num">4</span> Agent Manager</li>
+          <li class="sidebar-item" data-step="a5"><span class="step-num">5</span> Editor y Worktrees</li>
+          <li class="sidebar-item" data-step="a6"><span class="step-num">6</span> Artefactos y Paralelismo</li>
+          <li class="sidebar-item" data-step="a7"><span class="step-num">7</span> FAQ y Planes</li>
+          <li class="sidebar-item" data-step="a8"><span class="step-num">8</span> Taller Práctico</li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+      <!-- ═══════════════════════════════════════════ -->
+      <!-- MODULE: GENERAL                            -->
+      <!-- ═══════════════════════════════════════════ -->
+      <div id="module-general" class="module-content active">
+
+        <!-- Step G1: Bienvenida -->
+        <div class="step-section active" data-step="g1">
+          <div class="step-header">
+            <div class="step-number">1</div>
+            <div class="step-meta">
+              <h1 class="step-title">Bienvenida: El Estado del Arte en 2026</h1>
+              <div class="step-duration">⏱ 8 minutos</div>
+            </div>
+          </div>
+
+          <figure class="module-image">
+            <img src="images/harcodeai.png" alt="Logo 30X Hardcore AI" loading="lazy">
+            <figcaption>30X Hardcore AI</figcaption>
+          </figure>
+
+          <div class="objectives">
+            <span class="objective-tag">🎯 Entender la evolución del stack de desarrollo</span>
+            <span class="objective-tag">🎯 Diferenciar Copiloto vs Agente Autónomo</span>
+            <span class="objective-tag">🎯 Conocer las herramientas del ecosistema 2026</span>
+          </div>
+
+          <h2>De LLM Wrappers a AI-Native IDEs</h2>
+          <p>En 2023, las herramientas de IA para desarrollo eran <strong>"wrappers"</strong>: interfaces de chat
+            pegadas a un editor de código. En 2026, hemos llegado a los <strong>AI-Native IDEs</strong> — entornos donde
+            la IA no es un complemento, sino el motor principal de la ingeniería.</p>
+
+          <div class="card-grid">
+            <div class="card">
+              <div class="card-icon">🔧</div>
+              <div class="card-title">2023: LLM Wrapper</div>
+              <div class="card-desc">Chatbot integrado en el editor. Genera snippets de código. El humano copia, pega y
+                adapta manualmente.</div>
+            </div>
+            <div class="card">
+              <div class="card-icon">🤖</div>
+              <div class="card-title">2024: Copiloto</div>
+              <div class="card-desc">Autocompletado contextual. Sugiere código en tiempo real. Aún requiere guía
+                constante del desarrollador.</div>
+            </div>
+            <div class="card">
+              <div class="card-icon">🚀</div>
+              <div class="card-title">2026: Agente Autónomo</div>
+              <div class="card-desc">Lee tu codebase, ejecuta comandos, edita archivos, crea PRs. Piensa, actúa, observa
+                y corrige de forma iterativa.</div>
+            </div>
+          </div>
+
+          <div class="info-box concept">
+            <span class="box-icon">💡</span>
+            <div class="box-content">
+              <div class="box-title">Concepto Clave</div>
+              <p><strong>Ingeniería de Software Agéntica</strong> = Pasar de la <em>generación de código</em> (Code Gen)
+                a la <em>orquestación de sistemas</em> (System Orchestration). Ya no le dices al agente QUÉ escribir, le
+                diseñas el CONTEXTO para que tome buenas decisiones.</p>
+            </div>
+          </div>
+
+          <h2>El Ecosistema de Herramientas</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Herramienta</th>
+                <th>Tipo</th>
+                <th>Fortaleza Principal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Claude Code</strong></td>
+                <td>CLI / Terminal Agéntico</td>
+                <td>Ejecución táctica directa en tu filesystem</td>
+              </tr>
+              <tr>
+                <td><strong>Antigravity</strong></td>
+                <td>Manager Surface (Web)</td>
+                <td>Orquestación asíncrona y paralela</td>
+              </tr>
+              <tr>
+                <td><strong>Codex</strong></td>
+                <td>CLI / Agente de Código</td>
+                <td>Implementación y edición guiada desde terminal</td>
+              </tr>
+              <tr>
+                <td><strong>Cursor</strong></td>
+                <td>AI-Native IDE</td>
+                <td>Edición asistida con contexto visual</td>
+              </tr>
+              <tr>
+                <td><strong>Copilot CLI</strong></td>
+                <td>CLI / Asistente</td>
+                <td>Asistencia contextual en terminal y flujos de desarrollo</td>
+              </tr>
+              <tr>
+                <td><strong>Gemini CLI</strong></td>
+                <td>CLI / Asistente</td>
+                <td>Ejecución de tareas y automatización desde consola</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Prompt de Práctica (Copiar y Pegar)</h3>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">prompt</span><button class="copy-btn">📋 Copiar</button>
+            </div>
+            <pre>Prompt: Create a single-page app in a single HTML file with the following requirements:
+- Name: Typing Rain
+- Goal: Type falling words before they reach the bottom.
+- Features: Increasing difficulty, accuracy tracker, score.
+- The UI should be the city background with animated raindrop words.</pre>
+          </div>
+
+          <div class="step-nav">
+            <button class="nav-btn" data-direction="prev" disabled>← Anterior</button>
+            <button class="nav-btn primary" data-direction="next">Siguiente: El Bucle Agéntico →</button>
+          </div>
+        </div>
+
+        <!-- Step G2: Bucle Agéntico -->
+        <div class="step-section" data-step="g2">
+          <div class="step-header">
+            <div class="step-number">2</div>
+            <div class="step-meta">
+              <h1 class="step-title">El Bucle Agéntico (ReAct Loop)</h1>
+              <div class="step-duration">⏱ 5 minutos</div>
+            </div>
+          </div>
+
+          <div class="objectives">
+            <span class="objective-tag">🎯 Comprender el ciclo Pensar → Actuar → Observar</span>
+            <span class="objective-tag">🎯 Conocer las herramientas del agente</span>
+          </div>
+
+          <p>El corazón de toda herramienta de código agéntica es el <strong>Bucle Agéntico</strong> (también conocido
+            como <em>ReAct Loop</em>). Es un ciclo iterativo que se repite hasta completar la tarea:</p>
+
+          <div class="diagram-flow">
+            <div class="diagram-step">🧠 Pensar</div>
+            <span class="diagram-arrow">→</span>
+            <div class="diagram-step">📋 Planificar</div>
+            <span class="diagram-arrow">→</span>
+            <div class="diagram-step">🔧 Ejecutar Herramienta</div>
+            <span class="diagram-arrow">→</span>
+            <div class="diagram-step">👁 Observar Resultado</div>
+            <span class="diagram-arrow">→</span>
+            <div class="diagram-step">🔄 Corregir / Repetir</div>
+          </div>
+
+          <h2>Herramientas del Agente</h2>
+          <p>Claude Code tiene acceso a estas herramientas que le permiten interactuar con tu proyecto:</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Herramienta</th>
+                <th>Descripción</th>
+                <th>Ejemplo de Uso</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>Read</code></td>
+                <td>Lee contenido de archivos</td>
+                <td>Leer un archivo de configuración</td>
+              </tr>
+              <tr>
+                <td><code>Edit</code></td>
+                <td>Edita archivos existentes</td>
+                <td>Corregir un bug en una función</td>
+              </tr>
+              <tr>
+                <td><code>Write</code></td>
+                <td>Crea archivos nuevos</td>
+                <td>Crear un nuevo componente</td>
+              </tr>
+              <tr>
+                <td><code>Bash</code></td>
+                <td>Ejecuta comandos en terminal</td>
+                <td><code>npm test</code>, <code>git diff</code></td>
+              </tr>
+              <tr>
+                <td><code>Glob</code></td>
+                <td>Busca archivos por patrón</td>
+                <td>Encontrar todos los <code>*.test.ts</code></td>
+              </tr>
+              <tr>
+                <td><code>Grep</code></td>
+                <td>Busca contenido dentro de archivos</td>
+                <td>Buscar dónde se usa una función</td>
+              </tr>
+              <tr>
+                <td><code>Task</code></td>
+                <td>Delega a un subagente</td>
+                <td>Investigar en paralelo</td>
+              </tr>
+              <tr>
+                <td><code>WebFetch</code></td>
+                <td>Obtiene contenido de la web</td>
+                <td>Consultar documentación</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="info-box tip">
+            <span class="box-icon">💡</span>
+            <div class="box-content">
+              <div class="box-title">Para la clase</div>
+              <p>Abre una terminal, ejecuta <code>claude</code> y pide <em>"dame un overview de este proyecto"</em>.
+                Observa en tiempo real cómo Claude usa <code>Glob</code> para encontrar archivos, <code>Read</code> para
+                leerlos, y construye un resumen.</p>
+            </div>
+          </div>
+
+          <div class="step-nav">
+            <button class="nav-btn" data-direction="prev">← Anterior</button>
+            <button class="nav-btn primary" data-direction="next">Siguiente →</button>
+          </div>
+        </div>
+
+        <!-- Step G3: Del Commit al Artifact -->
+        <div class="step-section" data-step="g3">
+          <div class="step-header">
+            <div class="step-number">3</div>
+            <div class="step-meta">
+              <h1 class="step-title">Del "Commit" al "Artifact"</h1>
+              <div class="step-duration">⏱ 5 minutos</div>
+            </div>
+          </div>
+
+          <p>La nueva unidad de trabajo ya no es solo el <strong>commit</strong>. Con agentes, trabajamos con
+            <strong>Artifacts</strong>: paquetes completos de trabajo que incluyen:
+          </p>
+
+          <div class="card-grid">
+            <div class="card">
+              <div class="card-icon">📋</div>
+              <div class="card-title">Planes de Implementación</div>
+              <div class="card-desc">El agente primero investiga, analiza y propone un plan antes de escribir código.
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-icon">📝</div>
+              <div class="card-title">Diffs y Cambios</div>
+              <div class="card-desc">Ediciones verificables con contexto de por qué se hizo cada cambio.</div>
+            </div>
+            <div class="card">
+              <div class="card-icon">✅</div>
+              <div class="card-title">Verificaciones</div>
+              <div class="card-desc">Tests ejecutados, screenshots de validación, pruebas de que funciona.</div>
+            </div>
+          </div>
+
+          <div class="info-box warning">
+            <span class="box-icon">⚠️</span>
+            <div class="box-content">
+              <div class="box-title">Máxima del Módulo</div>
+              <p><em>"No escribas código que puedas generar, pero nunca generes código que no sepas verificar."</em></p>
+            </div>
+          </div>
+
+          <h2>El Problema de la Alucinación</h2>
+          <p>Los agentes pueden generar código que <em>parece</em> correcto pero tiene errores sutiles. Por eso, la
+            verificación automática mediante <strong>tests</strong> es más importante que nunca. El <strong>TDD
+              (Test-Driven Development)</strong> se convierte en una necesidad, no solo una buena práctica.</p>
+
+          <div class="step-nav">
+            <button class="nav-btn" data-direction="prev">← Anterior</button>
+            <button class="nav-btn primary" data-direction="next">Siguiente →</button>
+          </div>
+        </div>
+
+        <!-- Step G4: Context Engineering -->
+        <div class="step-section" data-step="g4">
+          <div class="step-header">
+            <div class="step-number">4</div>
+            <div class="step-meta">
+              <h1 class="step-title">Context Engineering vs Prompt Engineering</h1>
+              <div class="step-duration">⏱ 5 minutos</div>
+            </div>
+          </div>
+
+          <div class="info-box concept">
+            <span class="box-icon">💡</span>
+            <div class="box-content">
+              <div class="box-title">Diferencia Clave</div>
+              <p><strong>Prompt Engineering</strong> = Escribir el mensaje correcto al chat.<br>
+                <strong>Context Engineering</strong> = Diseñar tu sistema de archivos, reglas y configuración para que
+                el agente entienda el contexto sin necesidad de explicárselo en cada mensaje.
+              </p>
+            </div>
+          </div>
+
+          <p>En la ingeniería agéntica moderna, la calidad del output depende de:</p>
+          <ol>
+            <li><strong>Contexto</strong> — Qué información tiene el agente sobre tu proyecto (CLAUDE.md, rules,
+              memoria)</li>
+            <li><strong>Restricciones</strong> — Qué puede y no puede hacer (permisos, settings, hooks)</li>
+            <li><strong>Skills</strong> — Habilidades reutilizables empaquetadas (scripts versionados)</li>
+            <li><strong>Protocolos</strong> — Estándares de comunicación (MCP para conectar herramientas externas)</li>
+          </ol>
+
+          <h2>Checklist: "Agent-Ready Repo"</h2>
+          <p>Tu repositorio está listo para la IA cuando tiene:</p>
+          <ul>
+            <li>✅ <strong>Contexto</strong>: <code>CLAUDE.md</code> o <code>AGENTS.md</code> con instrucciones del
+              proyecto</li>
+            <li>✅ <strong>Restricciones</strong>: <code>.claude/settings.json</code> con permisos configurados</li>
+            <li>✅ <strong>Linting</strong>: Herramientas de calidad de código configuradas</li>
+            <li>✅ <strong>Tests</strong>: Suite de tests automatizados que el agente pueda ejecutar</li>
+            <li>✅ <strong>Documentación</strong>: README actualizado con comandos y arquitectura</li>
+          </ul>
+
+          <div class="step-nav">
+            <button class="nav-btn" data-direction="prev">← Anterior</button>
+            <button class="nav-btn primary" data-direction="next">Siguiente →</button>
+          </div>
+        </div>
+
+        <!-- Step G5: Requisitos -->
+        <div class="step-section" data-step="g5">
+          <div class="step-header">
+            <div class="step-number">5</div>
+            <div class="step-meta">
+              <h1 class="step-title">Requisitos Técnicos</h1>
+              <div class="step-duration">⏱ 2 minutos</div>
+            </div>
+          </div>
+
+          <h2>Software Necesario</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Requisito</th>
+                <th>Detalle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Terminal</strong></td>
+                <td>macOS Terminal, Linux, o WSL2 en Windows</td>
+              </tr>
+              <tr>
+                <td><strong>Node.js</strong></td>
+                <td>Versión 20+ (recomendado)</td>
+              </tr>
+              <tr>
+                <td><strong>Git</strong></td>
+                <td>Para control de versiones</td>
+              </tr>
+              <tr>
+                <td><strong>VS Code</strong></td>
+                <td>Editor de código (o Cursor)</td>
+              </tr>
+              <tr>
+                <td><strong>Claude Code CLI</strong></td>
+                <td>Se instala durante la clase</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>Cuentas y Accesos</h2>
+          <ul>
+            <li>Cuenta Claude (<a href="https://claude.com/pricing" target="_blank">Pro, Max, Teams o Enterprise</a>)
+              <strong>o</strong> cuenta en <a href="https://console.anthropic.com" target="_blank">Anthropic Console</a>
+            </li>
+            <li>Cuenta de GitHub (para demos de PRs y GitHub Actions)</li>
+          </ul>
+
+          <h2>🚀 Proyecto Base: CRM</h2>
+          <p>Durante todo el taller trabajaremos sobre un <strong>CRM real</strong> construido con Next.js, Prisma y
+            Tailwind CSS. Clona el repositorio antes de empezar:</p>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">bash</span><span class="code-filename">Clonar el
+                proyecto</span><button class="copy-btn">📋 Copiar</button></div>
+            <pre>git clone https://github.com/hardcore-ai/basic_crm_30x.git
+cd basic_crm_30x
+npm install</pre>
+          </div>
+          <div class="info-box tip">
+            <span class="box-icon">📦</span>
+            <div class="box-content">
+              <div class="box-title">Repositorio del Proyecto</div>
+              <p>Este CRM incluye gestión de clientes, interacciones y un dashboard. Todas las prácticas del taller
+                (prompts, flujos, MCPs, Skills, Hooks, Subagentes y Agent Teams) se aplican sobre este proyecto.
+                <br><a href="https://github.com/hardcore-ai/basic_crm_30x" target="_blank">🔗
+                  github.com/hardcore-ai/basic_crm_30x</a>
+              </p>
+            </div>
+          </div>
+
+          <h2>Nivel Requerido</h2>
+          <p>Intermedio: conocimiento de Git, línea de comandos (CLI), y ciclo de vida de desarrollo de software.</p>
+
+          <div class="info-box tip">
+            <span class="box-icon">💡</span>
+            <div class="box-content">
+              <div class="box-title">Cita de Cierre</div>
+              <p><em>"En 2026, la calidad de tu software ya no depende de tu capacidad para escribir sintaxis, sino de
+                  tu capacidad para especificar, restringir y verificar el trabajo de sistemas inteligentes."</em></p>
+            </div>
+          </div>
+
+          <div class="step-nav">
+            <button class="nav-btn" data-direction="prev">← Anterior</button>
+            <button class="nav-btn primary" data-direction="next" disabled>Fin del Módulo ✓</button>
+          </div>
+        </div>
+      </div><!-- /module-general -->
+
+      <!-- ═══════════════════════════════════════════ -->
+      <!-- MODULE: CLAUDE CODE (Steps C1-C5)          -->
+      <!-- ═══════════════════════════════════════════ -->
+      <div id="module-claude" class="module-content">
+
+        <!-- Step C1: Instalación -->
+        <div class="step-section active" data-step="c1">
+          <div class="step-header">
+            <div class="step-number">1</div>
+            <div class="step-meta">
+              <h1 class="step-title">Instalación y Primeros Pasos</h1>
+              <div class="step-duration">⏱ 5 minutos</div>
+            </div>
+          </div>
+          <div class="objectives">
+            <span class="objective-tag">🎯 Instalar Claude Code CLI</span>
+            <span class="objective-tag">🎯 Completar autenticación</span>
+            <span class="objective-tag">🎯 Ejecutar primera exploración</span>
+          </div>
+
+          <figure class="module-image">
+            <img src="images/claude_code.png" alt="Pantalla de Claude Code con login exitoso" loading="lazy">
+            <figcaption>Claude Code: login exitoso y sesión lista para iniciar.</figcaption>
+          </figure>
+
+          <h2>¿Qué es Claude Code?</h2>
+          <p>Claude Code es una herramienta de código agéntica que <strong>lee tu codebase, edita archivos y ejecuta
+              comandos</strong>. Funciona en tu terminal, IDE, navegador y como app de escritorio.</p>
+
+          <h2>Instalación</h2>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">bash</span><span class="code-filename">macOS / Linux /
+                WSL</span><button class="copy-btn">📋 Copiar</button></div>
+            <pre>curl -fsSL https://claude.ai/install.sh | bash</pre>
+          </div>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">bash</span><span
+                class="code-filename">Homebrew</span><button class="copy-btn">📋 Copiar</button></div>
+            <pre>brew install --cask claude-code</pre>
+          </div>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">powershell</span><span class="code-filename">Windows
+                PowerShell</span><button class="copy-btn">📋 Copiar</button></div>
+            <pre>irm https://claude.ai/install.ps1 | iex</pre>
+          </div>
+
+          <h2>Primera Sesión</h2>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn">📋 Copiar</button>
+            </div>
+            <pre>cd tu-proyecto
+claude
+# Se te pedirá iniciar sesión la primera vez
+# Usa /login si necesitas cambiar de cuenta</pre>
+          </div>
+
+          <h2>Modelos Disponibles</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Modelo</th>
+                <th>Caso de Uso</th>
+                <th>Costo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Opus 4.6</strong></td>
+                <td>Razonamiento complejo, arquitectura</td>
+                <td>$$$</td>
+              </tr>
+              <tr>
+                <td><strong>Sonnet 4.5</strong></td>
+                <td>Tareas diarias, balance costo/capacidad</td>
+                <td>$$</td>
+              </tr>
+              <tr>
+                <td><strong>Haiku</strong></td>
+                <td>Tareas simples, búsquedas rápidas</td>
+                <td>$</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>Primer Prompt: Explorar tu Proyecto</h2>
+          <div class="prompt-box">
+            <div class="prompt-label">💬 Prompt</div>
+            <div class="prompt-text">dame un overview de este CRM, su arquitectura en Next.js y esquema de datos en
+              Prisma</div><button class="copy-btn">📋 Copiar</button>
+          </div>
+
+          <div class="info-box tip">
+            <span class="box-icon">💡</span>
+            <div class="box-content">
+              <div class="box-title">Observa el Bucle</div>
+              <p>Claude usará <code>Glob</code> para encontrar archivos, <code>Read</code> para leerlos, y construirá un
+                resumen arquitectónico. Observa las herramientas que usa en la terminal.</p>
+            </div>
+          </div>
+
+          <div class="step-nav">
+            <button class="nav-btn" data-direction="prev" disabled>← Anterior</button>
+            <button class="nav-btn primary" data-direction="next">Siguiente: Modo Interactivo →</button>
+          </div>
+        </div>
+
+        <!-- Step C2: Modo Interactivo -->
+        <div class="step-section" data-step="c2">
+          <div class="step-header">
+            <div class="step-number">2</div>
+            <div class="step-meta">
+              <h1 class="step-title">Modo Interactivo: Atajos y Permisos</h1>
+              <div class="step-duration">⏱ 5 minutos</div>
+            </div>
+          </div>
+          <div class="objectives">
+            <span class="objective-tag">🎯 Dominar atajos de teclado</span>
+            <span class="objective-tag">🎯 Entender los 3 modos de permisos</span>
+            <span class="objective-tag">🎯 Usar menciones con @</span>
+          </div>
+
+          <h2>Los 3 Modos de Permisos</h2>
+          <p>Alterna entre modos con <kbd>Shift</kbd>+<kbd>Tab</kbd>:</p>
+          <div class="card-grid">
+            <div class="card">
+              <div class="card-icon">🔍</div>
+              <div class="card-title">Plan Mode</div>
+              <div class="card-desc">Solo lee y analiza. <strong>Nunca modifica</strong> archivos. Ideal para
+                exploración segura y diagnóstico.</div>
+            </div>
+            <div class="card">
+              <div class="card-icon">✋</div>
+              <div class="card-title">Normal Mode</div>
+              <div class="card-desc">Claude pide <strong>aprobación</strong> antes de cada acción que modifica archivos
+                o ejecuta comandos.</div>
+            </div>
+            <div class="card">
+              <div class="card-icon">⚡</div>
+              <div class="card-title">Auto-Accept</div>
+              <div class="card-desc">Claude ejecuta <strong>sin preguntar</strong>. Usar con precaución — ideal para
+                tareas de confianza.</div>
+            </div>
+          </div>
+
+          <h2>Atajos Esenciales</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Atajo</th>
+                <th>Función</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><kbd>Ctrl</kbd>+<kbd>C</kbd></td>
+                <td>Cancelar acción actual</td>
+              </tr>
+              <tr>
+                <td><kbd>Ctrl</kbd>+<kbd>R</kbd></td>
+                <td>Buscar en historial de prompts</td>
+              </tr>
+              <tr>
+                <td><kbd>Ctrl</kbd>+<kbd>O</kbd></td>
+                <td>Ver pensamiento extendido (verbose)</td>
+              </tr>
+              <tr>
+                <td><kbd>Ctrl</kbd>+<kbd>L</kbd></td>
+                <td>Limpiar pantalla</td>
+              </tr>
+              <tr>
+                <td><kbd>Shift</kbd>+<kbd>Enter</kbd></td>
+                <td>Prompt multilínea</td>
+              </tr>
+              <tr>
+                <td><kbd>Esc</kbd>+<kbd>Esc</kbd></td>
+                <td>Rewind — revertir al checkpoint anterior</td>
+              </tr>
+              <tr>
+                <td><kbd>Shift</kbd>+<kbd>Tab</kbd></td>
+                <td>Cambiar modo de permisos</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>Menciones con @</h2>
+          <p>Da contexto directo incluyendo archivos o directorios en tu prompt:</p>
+          <div class="prompt-box">
+            <div class="prompt-label">💬 Prompt — @ Mención en el CRM</div>
+            <div class="prompt-text">@src/app/api/customers/route.ts ¿hay alguna vulnerabilidad de seguridad en esta
+              ruta de API? ¿Se valida el input antes de hacer queries a Prisma?
+            </div><button class="copy-btn">📋 Copiar</button>
+          </div>
+
+          <h2>Comandos Integrados</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Comando</th>
+                <th>Descripción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>/help</code></td>
+                <td>Mostrar ayuda y comandos disponibles</td>
+              </tr>
+              <tr>
+                <td><code>/clear</code></td>
+                <td>Limpiar historial de conversación</td>
+              </tr>
+              <tr>
+                <td><code>/cost</code></td>
+                <td>Ver costo acumulado de la sesión</td>
+              </tr>
+              <tr>
+                <td><code>/context</code></td>
+                <td>Ver uso de la ventana de contexto</td>
+              </tr>
+              <tr>
+                <td><code>/compact</code></td>
+                <td>Compactar contexto preservando lo esencial</td>
+              </tr>
+              <tr>
+                <td><code>/model sonnet</code></td>
+                <td>Cambiar modelo mid-session</td>
+              </tr>
+              <tr>
+                <td><code>/resume</code></td>
+                <td>Reanudar conversación anterior</td>
+              </tr>
+              <tr>
+                <td><code>/rename</code></td>
+                <td>Nombrar la sesión actual</td>
+              </tr>
+              <tr>
+                <td><code>!comando</code></td>
+                <td>Ejecutar comando bash directamente</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="step-nav">
+            <button class="nav-btn" data-direction="prev">← Anterior</button>
+            <button class="nav-btn primary" data-direction="next">Siguiente: Settings →</button>
+          </div>
+        </div>
+
+        <!-- Step C3: Settings y Permisos -->
+        <div class="step-section" data-step="c3">
+          <div class="step-header">
+            <div class="step-number">3</div>
+            <div class="step-meta">
+              <h1 class="step-title">Settings y Permisos</h1>
+              <div class="step-duration">⏱ 3 minutos</div>
+            </div>
+          </div>
+          <div class="objectives">
+            <span class="objective-tag">🎯 Entender la jerarquía de scopes</span>
+            <span class="objective-tag">🎯 Configurar reglas de permisos</span>
+            <span class="objective-tag">🎯 Proteger archivos sensibles</span>
+          </div>
+
+          <h2>Jerarquía de Scopes (Precedencia)</h2>
+          <p>Las configuraciones se aplican de mayor a menor prioridad:</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Scope</th>
+                <th>Ubicación</th>
+                <th>¿Compartido?</th>
+                <th>Uso</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Managed</strong></td>
+                <td>Sistema (<code>/etc/claude-code/</code>)</td>
+                <td>Sí (IT)</td>
+                <td>Políticas corporativas</td>
+              </tr>
+              <tr>
+                <td><strong>Local</strong></td>
+                <td><code>.claude/settings.local.json</code></td>
+                <td>No (gitignored)</td>
+                <td>Overrides personales</td>
+              </tr>
+              <tr>
+                <td><strong>Project</strong></td>
+                <td><code>.claude/settings.json</code></td>
+                <td>Sí (Git)</td>
+                <td>Reglas del equipo</td>
+              </tr>
+              <tr>
+                <td><strong>User</strong></td>
+                <td><code>~/.claude/settings.json</code></td>
+                <td>No</td>
+                <td>Preferencias personales</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>Ejemplo: settings.json del Proyecto</h2>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">json</span><span
+                class="code-filename">.claude/settings.json</span><button class="copy-btn">📋 Copiar</button></div>
+            <pre>{
+  "permissions": {
+    "deny": [
+      "Read(.env)",
+      "Read(no_leer.txt)",
+      "Read(**/*.pem)",
+      "Edit(.env)",
+      "Bash(rm -rf *)",
+      "Bash(DROP TABLE *)"
+    ],
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(npx prisma *)",
+      "Bash(git *)",
+      "Read",
+      "Edit",
+      "Write"
+    ]
+  }
+}</pre>
+          </div>
+
+          <div class="info-box danger">
+            <span class="box-icon">🔒</span>
+            <div class="box-content">
+              <div class="box-title">Seguridad</div>
+              <p>Las reglas <code>deny</code> siempre tienen prioridad sobre <code>allow</code>. Si un archivo está en
+                deny, Claude NO podrá leerlo ni editarlo, sin importar las reglas de allow.</p>
+            </div>
+          </div>
+
+          <h2>Ejercicio Práctico</h2>
+          <ol>
+            <li>Crea el archivo <code>.claude/settings.json</code> con las reglas de arriba</li>
+            <li>Abre <code>claude</code> e intenta: <em>"lee el archivo secrets.env"</em></li>
+            <li>Verifica que Claude bloquea el acceso</li>
+            <li>Usa <code>/config</code> para explorar la configuración interactiva</li>
+          </ol>
+
+          <div class="step-nav">
+            <button class="nav-btn" data-direction="prev">← Anterior</button>
+            <button class="nav-btn primary" data-direction="next">Siguiente: Memoria →</button>
+          </div>
+        </div>
+
+        <!-- Step C4: Memoria CLAUDE.md -->
+        <div class="step-section" data-step="c4">
+          <div class="step-header">
+            <div class="step-number">4</div>
+            <div class="step-meta">
+              <h1 class="step-title">Memoria: CLAUDE.md y Auto Memory</h1>
+              <div class="step-duration">⏱ 5 minutos</div>
+            </div>
+          </div>
+          <div class="objectives">
+            <span class="objective-tag">🎯 Escribir un CLAUDE.md efectivo</span>
+            <span class="objective-tag">🎯 Entender Auto Memory</span>
+            <span class="objective-tag">🎯 Usar reglas modulares</span>
+          </div>
+
+          <div class="info-box concept">
+            <span class="box-icon">💡</span>
+            <div class="box-content">
+              <div class="box-title">Dos Tipos de Memoria</div>
+              <p><strong>CLAUDE.md</strong> = Instrucciones que TÚ escribes para Claude (reglas, stack,
+                convenciones)<br>
+                <strong>Auto Memory</strong> = Notas que CLAUDE escribe para sí mismo (patrones aprendidos, insights)
+              </p>
+            </div>
+          </div>
+
+          <h2>Jerarquía de Memoria</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Archivo</th>
+                <th>Propósito</th>
+                <th>Compartido</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>./CLAUDE.md</code></td>
+                <td>Instrucciones del proyecto</td>
+                <td>Sí (Git)</td>
+              </tr>
+              <tr>
+                <td><code>~/.claude/CLAUDE.md</code></td>
+                <td>Preferencias personales globales</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td><code>./CLAUDE.local.md</code></td>
+                <td>Preferencias por proyecto (gitignored)</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td><code>.claude/rules/*.md</code></td>
+                <td>Reglas modulares por tema</td>
+                <td>Sí (Git)</td>
+              </tr>
+              <tr>
+                <td><code>~/.claude/projects/&lt;proyecto&gt;/memory/</code></td>
+                <td>Auto Memory (notas de Claude)</td>
+                <td>No</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>Template: CLAUDE.md Efectivo</h2>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">markdown</span><span
+                class="code-filename">CLAUDE.md</span><button class="copy-btn">📋 Copiar</button></div>
+            <pre># CRM Proyecto - Instrucciones para Claude
+
+## Stack
+- Runtime: Node.js 20+ con TypeScript y React 19
+- Framework: Next.js 16 (App Router)
+- Estilos: Tailwind CSS v4
+- ORM: Prisma con PostgreSQL (Neon DB)
+- Pruebas: Vitest
+
+## Comandos
+- Dev server: `npm run dev`
+- Build: `npm run build`
+- DB generate: `npx prisma generate`
+- Linter: `npm run lint`
+
+## Convenciones
+- Componentes de UI van en `src/components/` (usamos Lucide React para íconos)
+- Lógica de backend y endpoints en `src/app/api/`
+- Páginas de la app van en `src/app/`
+- Componentes de servidor (RSC) por defecto. Usa `"use client"` solo si necesitas interactividad o hooks de React
+- Las mutaciones a la base de datos se hacen usando Server Actions o en rutas de API
+
+## Seguridad
+- NUNCA commitear archivos `.env.local` ni secrets
+- NUNCA retornar objetos Prisma completos al frontend, filtra datos sensibles
+- Valida entradas de usuario antes de tocar la DB</pre>
+          </div>
+
+          <h2>Reglas Modulares</h2>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">markdown</span><span
+                class="code-filename">.claude/rules/testing.md</span><button class="copy-btn">📋 Copiar</button></div>
+            <pre># Convenciones de Testing
+
+- Framework: Vitest + Supertest para tests de integración
+- Cada test debe cubrir: happy path, errores, edge cases
+- Nombrar tests descriptivamente:
+  "should return 404 when product not found"
+- Usar factories para datos de prueba, no hardcodear</pre>
+          </div>
+
+          <h2>Auto Memory</h2>
+          <p>Puedes decirle a Claude que recuerde algo específico:</p>
+          <div class="prompt-box">
+            <div class="prompt-label">💬 Prompt</div>
+            <div class="prompt-text">recuerda que siempre usamos componentes de servidor (RSC) en Next.js por defecto
+            </div><button class="copy-btn">📋
+              Copiar</button>
+          </div>
+          <p>Usa <code>/memory</code> para revisar y editar lo que Claude ha guardado.</p>
+
+          <h2>Generar CLAUDE.md Automáticamente</h2>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn">📋 Copiar</button>
+            </div>
+            <pre># Dentro de una sesión de Claude Code:
+/init
+# Claude analizará tu proyecto y generará un CLAUDE.md base</pre>
+          </div>
+
+          <div class="step-nav">
+            <button class="nav-btn" data-direction="prev">← Anterior</button>
+            <button class="nav-btn primary" data-direction="next">Siguiente: Flujos de Trabajo →</button>
+          </div>
+        </div>
+
+        <!-- Step C5: Flujos de Trabajo -->
+        <div class="step-section" data-step="c5">
+          <div class="step-header">
+            <div class="step-number">5</div>
+            <div class="step-meta">
+              <h1 class="step-title">Flujos de Trabajo Reales</h1>
+              <div class="step-duration">⏱ 7 minutos</div>
+            </div>
+          </div>
+          <div class="objectives">
+            <span class="objective-tag">🎯 Debug agéntico con stack traces</span>
+            <span class="objective-tag">🎯 Refactorización incremental</span>
+            <span class="objective-tag">🎯 Commits y PRs conversacionales</span>
+          </div>
+
+          <h2>Debug Agéntico</h2>
+          <p>Pega el error directamente en Claude y deja que trace la causa raíz:</p>
+          <div class="prompt-box">
+            <div class="prompt-label">💬 Prompt — Debug del CRM</div>
+            <div class="prompt-text">Tengo este error en el CRM:
+              TypeError: Cannot read properties of undefined (reading 'name')
+              at GET (src/app/api/customers/route.ts:15)
+
+              Diagnostica la causa raíz en la ruta de clientes y corrígelo. Verifica con npm run build</div><button
+              class="copy-btn">📋 Copiar</button>
+          </div>
+
+          <h2>Refactorización Incremental</h2>
+          <div class="info-box tip">
+            <span class="box-icon">💡</span>
+            <div class="box-content">
+              <div class="box-title">Regla de Oro</div>
+              <p>Pide cambios en <strong>pasos pequeños y verificables</strong>. Siempre incluye un comando de
+                verificación.</p>
+            </div>
+          </div>
+          <div class="prompt-box">
+            <div class="prompt-label">💬 Prompt — Refactorización del CRM</div>
+            <div class="prompt-text">refactoriza src/components/Sidebar.tsx para usar iconos de Lucide React en lugar de
+              emojis o SVG, manteniendo el mismo
+              comportamiento visual. Agrega hover effects con Tailwind. Después de cada cambio, corre npm run lint</div>
+            <button class="copy-btn">📋
+              Copiar</button>
+          </div>
+
+          <h2>Checkpoints y Rewind</h2>
+          <p>Claude crea <strong>checkpoints automáticos</strong> antes de cada cambio. Si algo sale mal:</p>
+          <ul>
+            <li><kbd>Esc</kbd>+<kbd>Esc</kbd> — Revertir al estado anterior (Rewind)</li>
+            <li><strong>Restore</strong>: Revierte código al checkpoint</li>
+            <li><strong>Summarize</strong>: Mantiene los cambios pero limpia el contexto</li>
+          </ul>
+
+          <h2>Git y Pull Requests</h2>
+          <div class="prompt-box">
+            <div class="prompt-label">💬 Prompt — Code Review del CRM</div>
+            <div class="prompt-text">revisa todos mis cambios contra main buscando problemas de seguridad en las rutas
+              de API del CRM y rendimiento en las queries de Prisma
+            </div><button class="copy-btn">📋 Copiar</button>
+          </div>
+          <div class="prompt-box">
+            <div class="prompt-label">💬 Prompt</div>
+            <div class="prompt-text">commitea los bug fixes en un commit y la refactorización en otro, con mensajes
+              descriptivos</div><button class="copy-btn">📋 Copiar</button>
+          </div>
+          <div class="prompt-box">
+            <div class="prompt-label">💬 Prompt — PR del CRM</div>
+            <div class="prompt-text">crea un PR con título descriptivo, descripción detallada de los cambios al CRM de
+              clientes, y un test plan que incluya los endpoints de /api/customers y /api/interactions</div><button
+              class="copy-btn">📋 Copiar</button>
+          </div>
+
+          <h2>Gestión de Sesiones</h2>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn">📋 Copiar</button>
+            </div>
+            <pre># Nombrar la sesión actual
+/rename bugfix-authentication
+
+# Continuar la sesión más reciente
+claude -c
+
+# Seleccionar sesión para reanudar
+claude -r
+
+# Reanudar por nombre
+claude --resume bugfix-authentication</pre>
+          </div>
+
+          <div class="step-nav">
+            <button class="nav-btn" data-direction="prev">← Anterior</button>
+            <button class="nav-btn primary" data-direction="next">Siguiente: MCP →</button>
+          </div>
+        </div>
+
+        <!-- Step C6: MCP -->
+        <div class="step-section" data-step="c6">
+          <div class="step-header">
+            <div class="step-number">6</div>
+            <div class="step-meta">
+              <h1 class="step-title">MCP — Model Context Protocol</h1>
+              <div class="step-duration">⏱ 5 minutos</div>
+            </div>
+          </div>
+          <div class="objectives">
+            <span class="objective-tag">🎯 Entender qué es MCP y por qué existe</span>
+            <span class="objective-tag">🎯 Instalar servidores MCP</span>
+            <span class="objective-tag">🎯 Conectar Claude a bases de datos y APIs</span>
+          </div>
+
+          <div class="info-box concept">
+            <span class="box-icon">🔌</span>
+            <div class="box-content">
+              <div class="box-title">MCP = El "USB-C" de la IA</div>
+              <p>MCP es un <strong>protocolo abierto estandarizado</strong> para que modelos de IA se conecten a
+                herramientas externas: bases de datos, APIs, GitHub, Slack, etc. Rompe los silos de información.</p>
+            </div>
+          </div>
+
+          <h2>Tipos de Conexión</h2>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">bash</span><span class="code-filename">HTTP
+                remoto</span><button class="copy-btn">📋 Copiar</button></div>
+            <pre># Conectar GitHub (HTTP remoto)
+claude mcp add --transport http github https://api.githubcopilot.com/mcp/</pre>
+          </div>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">bash</span><span class="code-filename">Stdio
+                local</span><button class="copy-btn">📋 Copiar</button></div>
+            <pre># Conectar PostgreSQL en Neon DB
+claude mcp add neon-pg -- npx -y @modelcontextprotocol/server-postgres "postgresql://usuario:password@ep-midb.aws.neon.tech/neondb?sslmode=require"</pre>
+          </div>
+
+          <h2>Configuración por Proyecto (.mcp.json)</h2>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">json</span><span
+                class="code-filename">.mcp.json</span><button class="copy-btn">📋 Copiar</button></div>
+            <pre>{
+  "mcpServers": {
+    "postgres": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-postgres",
+               "postgresql://localhost:5432/shopflow"]
+    },
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/context7-mcp"]
+    }
+  }
+}</pre>
+          </div>
+
+          <h2>Prompts con MCP</h2>
+          <div class="prompt-box">
+            <div class="prompt-label">💬 Prompt — MCP + CRM</div>
+            <div class="prompt-text">consulta el esquema de la tabla Customer directamente desde la base de datos de
+              Neon. ¿Hay índices en la columna email? ¿Deberíamos agregar alguno para las queries de búsqueda del CRM?
+            </div><button class="copy-btn">📋 Copiar</button>
+          </div>
+          <div class="prompt-box">
+            <div class="prompt-label">💬 Prompt</div>
+            <div class="prompt-text">mira el issue #42 de GitHub y dame un plan de implementación considerando el
+              esquema actual de la BD</div><button class="copy-btn">📋 Copiar</button>
+          </div>
+
+          <h2>Gestión de Servidores</h2>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn">📋 Copiar</button>
+            </div>
+            <pre># Listar servidores conectados
+claude mcp list
+
+# Eliminar servidor
+claude mcp remove postgres</pre>
+          </div>
+
+          <h2>🏪 Marketplaces y Repositorios Útiles</h2>
+          <div class="card-grid">
+            <div class="card">
+              <div class="card-icon">🌐</div>
+              <div class="card-title">MCP.so</div>
+              <div class="card-desc">Directorio comunitario de servidores MCP. Filtra por categoría, lenguaje y
+                popularidad. <a href="https://mcp.so" target="_blank">mcp.so</a></div>
+            </div>
+            <div class="card">
+              <div class="card-icon">📦</div>
+              <div class="card-title">Smithery.ai</div>
+              <div class="card-desc">Marketplace de MCP servers con instalación en un click. <a
+                  href="https://smithery.ai" target="_blank">smithery.ai</a></div>
+            </div>
+            <div class="card">
+              <div class="card-icon">🐙</div>
+              <div class="card-title">GitHub: awesome-mcp-servers</div>
+              <div class="card-desc">Lista curada de servidores MCP organizados por categoría. <a
+                  href="https://github.com/punkpeye/awesome-mcp-servers" target="_blank">GitHub Repo</a></div>
+            </div>
+            <div class="card">
+              <div class="card-icon">📚</div>
+              <div class="card-title">Anthropic MCP Docs</div>
+              <div class="card-desc">Documentación oficial del protocolo y servidores de referencia. <a
+                  href="https://modelcontextprotocol.io" target="_blank">modelcontextprotocol.io</a></div>
+            </div>
+            <div class="card">
+              <div class="card-icon">🧩</div>
+              <div class="card-title">AITMPL</div>
+              <div class="card-desc">Plantillas y recursos para flujos con agentes, útil para descubrir ideas de
+                integración con MCP. <a href="https://www.aitmpl.com/" target="_blank">aitmpl.com</a></div>
+            </div>
+          </div>
+
+          <h2>⭐ Mi Top 6 MCPs</h2>
+          <div class="info-box concept">
+            <span class="box-icon">📌</span>
+            <div class="box-content">
+              <div class="box-title">Recomendaciones del Instructor</div>
+              <p>Estos son los 6 servidores MCP que más uso en proyectos reales:</p>
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>MCP Server</th>
+                <th>¿Para qué lo uso?</th>
+                <th>Link</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1</strong></td>
+                <td><strong>GitHub</strong></td>
+                <td>Issues, PRs, revisiones de código, GitHub Actions — todo desde Claude sin salir de la terminal</td>
+                <td><a href="https://github.com/modelcontextprotocol/servers/tree/main/src/github"
+                    target="_blank">GitHub MCP</a></td>
+              </tr>
+              <tr>
+                <td><strong>2</strong></td>
+                <td><strong>Context7</strong></td>
+                <td>Documentación actualizada de cualquier librería (Next.js, Prisma, etc.) directamente en el contexto
+                  de Claude</td>
+                <td><a href="https://github.com/upstash/context7" target="_blank">Context7</a></td>
+              </tr>
+              <tr>
+                <td><strong>3</strong></td>
+                <td><strong>PostgreSQL / NeonDB</strong></td>
+                <td>Consultar esquemas, ejecutar queries, verificar índices y datos directamente en la base de datos
+                </td>
+                <td><a href="https://github.com/modelcontextprotocol/servers/tree/main/src/postgres"
+                    target="_blank">Postgres MCP</a></td>
+              </tr>
+              <tr>
+                <td><strong>4</strong></td>
+                <td><strong>Vercel</strong></td>
+                <td>Deploy, logs de producción, variables de entorno y dominios desde Claude Code</td>
+                <td><a href="https://vercel.com/docs/mcp" target="_blank">Vercel MCP</a></td>
+              </tr>
+              <tr>
+                <td><strong>5</strong></td>
+                <td><strong>Sequential Thinking</strong></td>
+                <td>Razonamiento paso a paso estructurado para problemas complejos de arquitectura y debugging</td>
+                <td><a href="https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking"
+                    target="_blank">Sequential Thinking</a></td>
+              </tr>
+              <tr>
+                <td><strong>6</strong></td>
+                <td><strong>Excalidraw</strong></td>
+                <td>Diagramación visual rápida (arquitectura, flujos y wireframes) desde Claude para apoyar diseño técnico</td>
+                <td><a href="https://excalidraw-mcp-app.vercel.app/mcp" target="_blank">Excalidraw MCP</a></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>🔧 Cómo Instalar cada MCP</h2>
+
+          <h3>1. GitHub MCP (HTTP remoto)</h3>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn">📋 Copiar</button>
+            </div>
+            <pre>claude mcp add --transport http github https://api.githubcopilot.com/mcp/</pre>
+          </div>
+
+          <h3>2. Context7</h3>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn">📋 Copiar</button>
+            </div>
+            <pre>claude mcp add context7 -- npx -y @anthropic-ai/context7-mcp</pre>
+          </div>
+
+          <h3>3. PostgreSQL / NeonDB</h3>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn">📋 Copiar</button>
+            </div>
+            <pre># Reemplaza con tu connection string de Neon DB
+claude mcp add neon-pg -- npx -y @modelcontextprotocol/server-postgres \
+  "postgresql://usuario:password@ep-midb.aws.neon.tech/neondb?sslmode=require"</pre>
+          </div>
+
+          <h3>4. Vercel</h3>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn">📋 Copiar</button>
+            </div>
+            <pre>claude mcp add --transport http vercel https://mcp.vercel.com/sse</pre>
+          </div>
+
+          <h3>5. Sequential Thinking</h3>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn">📋 Copiar</button>
+            </div>
+            <pre>claude mcp add sequential-thinking -- npx -y @modelcontextprotocol/server-sequential-thinking</pre>
+          </div>
+
+          <h3>6. Excalidraw</h3>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn">📋 Copiar</button>
+            </div>
+            <pre>claude mcp add --transport http excalidraw-app-demo https://excalidraw-mcp-app.vercel.app/mcp</pre>
+          </div>
+
+          <div class="info-box tip">
+            <span class="box-icon">💡</span>
+            <div class="box-content">
+              <div class="box-title">Tip: Configuración por Proyecto</div>
+              <p>Para que todos los MCPs se carguen automáticamente al abrir el proyecto, agrégalos a
+                <code>.mcp.json</code> en la raíz del repo. Así cada miembro del equipo tendrá las mismas herramientas
+                disponibles.</p>
+            </div>
+          </div>
+
+          <div class="step-nav">
+            <button class="nav-btn" data-direction="prev">← Anterior</button>
+            <button class="nav-btn primary" data-direction="next">Siguiente: Skills →</button>
+          </div>
+        </div>
+
+        <!-- Step C7: Skills -->
+        <div class="step-section" data-step="c7">
+          <div class="step-header">
+            <div class="step-number">7</div>
+            <div class="step-meta">
+              <h1 class="step-title">Skills — Habilidades Personalizadas</h1>
+              <div class="step-duration">⏱ 5 minutos</div>
+            </div>
+          </div>
+          <div class="objectives">
+            <span class="objective-tag">🎯 Crear una skill personalizada</span>
+            <span class="objective-tag">🎯 Invocar skills con /nombre</span>
+            <span class="objective-tag">🎯 Compartir skills con el equipo</span>
+          </div>
+
+          <p>Las Skills son carpetas con un archivo <code>SKILL.md</code> en
+            <code>.claude/skills/&lt;nombre-skill&gt;/SKILL.md</code>. Puedes invocarlas con <code>/nombre</code> o
+            dejar que Claude las active automáticamente según la descripción.</p>
+
+          <h2>Estructura Oficial de una Skill (SKILL.md)</h2>
+          <p>Basado en la referencia de skills, una skill tiene <strong>frontmatter YAML</strong> + <strong>cuerpo en
+              Markdown</strong>. El frontmatter controla comportamiento; el cuerpo define instrucciones reutilizables.
+          </p>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">markdown</span><span
+                class="code-filename">.claude/skills/<nombre>/SKILL.md</span><button class="copy-btn">📋
+                Copiar</button></div>
+            <pre>---
+name: mi-skill
+description: Qué hace y cuándo usarla
+argument-hint: "[argumentos-opcionales]"
+disable-model-invocation: true
+user-invocable: true
+allowed-tools: Read, Grep, Glob
+context: fork
+agent: Explore
+---
+
+# Objetivo
+Explica la tarea que ejecuta la skill.
+
+# Instrucciones
+Usa `$ARGUMENTS` para parámetros dinámicos.
+Puedes usar `$ARGUMENTS[0]`, `$ARGUMENTS[1]` o `$0`, `$1`.
+
+# Recursos
+- Ver detalles en [reference.md](reference.md)
+- Ver ejemplos en [examples.md](examples.md)</pre>
+          </div>
+
+          <h2>Campos Clave de Frontmatter</h2>
+          <ul>
+            <li><code>description</code> (recomendado): ayuda a Claude a decidir cuándo cargar la skill</li>
+            <li><code>disable-model-invocation: true</code>: solo tú la ejecutas con <code>/skill</code></li>
+            <li><code>user-invocable: false</code>: la puede usar Claude, pero no aparece para invocación manual</li>
+            <li><code>allowed-tools</code>: principio de mínimo privilegio</li>
+            <li><code>context: fork</code> + <code>agent</code>: ejecuta la skill en contexto aislado (subagente)</li>
+            <li><code>hooks</code>: permite hooks scoped a la vida de esa skill</li>
+          </ul>
+
+          <h2>Anatomía de una Skill</h2>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">markdown</span><span
+                class="code-filename">.claude/skills/ui-audit/SKILL.md</span><button class="copy-btn">📋 Copiar</button>
+            </div>
+            <pre>---
+name: ui-audit
+description: Audita componentes React/Tailwind y detecta problemas de accesibilidad, semántica y UX. Úsalo al revisar UIs o PRs frontend.
+argument-hint: "[ruta-opcional]"
+disable-model-invocation: true
+allowed-tools: Read, Grep, Glob, Bash(npm run lint*)
+---
+
+# Auditoría de Interfaz
+
+Audita la ruta: `$ARGUMENTS`.
+Si no se pasó argumento, usa `src/components`.
+
+Checklist:
+1. Ejecuta `npm run lint` y resume errores/warnings relevantes
+2. Detecta HTML no semántico (`div` clickable, falta de `button`, headings mal jerarquizados)
+3. Verifica estados `hover`, `focus-visible` y contraste mínimo
+4. Revisa labels/aria en inputs, formularios e icon buttons
+5. Entrega `docs/ui-audit.md` con:
+   - Hallazgos críticos
+   - Hallazgos medios
+   - Fixes sugeridos con snippets</pre>
+          </div>
+
+          <h2>Invocar una Skill</h2>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn">📋 Copiar</button>
+            </div>
+            <pre># Dentro de una sesión de Claude Code:
+/ui-audit
+
+# Con argumentos:
+/ui-audit src/components/Dashboard.tsx</pre>
+          </div>
+
+          <h2>Otra Skill: Generar Documentación API</h2>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">markdown</span><span
+                class="code-filename">.claude/skills/generate-api-docs/SKILL.md</span><button class="copy-btn">📋
+                Copiar</button></div>
+            <pre>---
+name: generate-api-docs
+description: Genera documentación técnica de endpoints a partir de rutas API (Next.js/Express/Fastify) con ejemplos y errores.
+argument-hint: "[ruta-api]"
+disable-model-invocation: true
+context: fork
+agent: Explore
+allowed-tools: Read, Grep, Glob, Write
+---
+
+# Generar Documentación de API
+
+Genera docs para `$ARGUMENTS`.
+Si no hay argumento, usa `src/app/api`.
+
+1. Descubre rutas y handlers (`GET/POST/PUT/PATCH/DELETE`)
+2. Extrae params, query, body, headers y códigos de respuesta
+3. Documenta ejemplos request/response y casos de error comunes
+4. Crea/actualiza `docs/API.md` en formato consistente
+5. Nunca incluyas secretos, credenciales ni schema interno sensible</pre>
+          </div>
+
+          <h2>Mini Tutorial: Crear una Skill desde Terminal</h2>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">bash</span><span class="code-filename">Skill del
+                proyecto</span><button class="copy-btn">📋 Copiar</button></div>
+            <pre>mkdir -p .claude/skills/review-pr
+
+cat > .claude/skills/review-pr/SKILL.md <<'EOF'
+---
+name: review-pr
+description: Revisa un PR y reporta riesgos, regresiones y faltantes de test.
+argument-hint: "[numero-pr o rama]"
+disable-model-invocation: true
+allowed-tools: Read, Grep, Glob, Bash(gh pr *), Bash(git diff*)
+---
+
+Revisa el PR `$ARGUMENTS`:
+1. Resume cambios clave
+2. Detecta bugs y regresiones de comportamiento
+3. Señala gaps de testing
+4. Entrega reporte con severidad (alta/media/baja) y archivos afectados
+EOF</pre>
+          </div>
+
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">bash</span><span class="code-filename">Probar en
+                Claude Code</span><button class="copy-btn">📋 Copiar</button></div>
+            <pre>claude
+/review-pr 128</pre>
+          </div>
+
+          <h2>Mejores Prácticas (Skills)</h2>
+          <ul>
+            <li><strong>Usa carpeta + SKILL.md</strong>: <code>.claude/skills/nombre/SKILL.md</code>, no un archivo suelto</li>
+            <li><strong>Description específica</strong>: incluye qué hace y cuándo usarla (mejora auto-disparo)</li>
+            <li><strong>Controla invocación</strong>: <code>disable-model-invocation: true</code> para tareas con efectos secundarios</li>
+            <li><strong>Aplica mínimo privilegio</strong>: limita con <code>allowed-tools</code></li>
+            <li><strong>Define argumentos</strong>: usa <code>argument-hint</code> + <code>$ARGUMENTS</code> / <code>$ARGUMENTS[n]</code></li>
+            <li><strong>Separa contexto pesado</strong>: deja <code>SKILL.md</code> corto y mueve detalle a archivos de apoyo</li>
+            <li><strong>Aísla tareas complejas</strong>: usa <code>context: fork</code> en skills largas o de investigación</li>
+          </ul>
+
+          <h2>Ubicaciones de Skills</h2>
+          <ul>
+            <li><code>.claude/skills/</code> — Skills del proyecto (compartidas via Git)</li>
+            <li><code>~/.claude/skills/</code> — Skills personales (todos los proyectos)</li>
+          </ul>
+
+          <h2>🏪 Marketplaces y Repositorios de Skills</h2>
+          <div class="card-grid">
+            <div class="card">
+              <div class="card-icon">🐙</div>
+              <div class="card-title">GitHub: anthropics/skills</div>
+              <div class="card-desc">Repositorio público oficial con ejemplos y plantillas de Agent Skills. <a
+                  href="https://github.com/anthropics/skills" target="_blank">GitHub Repo</a></div>
+            </div>
+            <div class="card">
+              <div class="card-icon">📖</div>
+              <div class="card-title">Anthropic Docs: Skills</div>
+              <div class="card-desc">Guía oficial para crear y compartir Skills. <a
+                  href="https://code.claude.com/docs/es/skills" target="_blank">Documentación</a></div>
+            </div>
+            <div class="card">
+              <div class="card-icon">💬</div>
+              <div class="card-title">Discord Anthropic</div>
+              <div class="card-desc">Canal #claude-code donde la comunidad comparte Skills. <a
+                  href="https://www.anthropic.com/discord" target="_blank">Discord</a></div>
+            </div>
+            <div class="card">
+              <div class="card-icon">🧩</div>
+              <div class="card-title">AITMPL</div>
+              <div class="card-desc">Repositorio de prompts y plantillas reutilizables para acelerar creación de
+                Skills. <a href="https://www.aitmpl.com/" target="_blank">aitmpl.com</a></div>
+            </div>
+            <div class="card">
+              <div class="card-icon">🛠️</div>
+              <div class="card-title">SkillsMP</div>
+              <div class="card-desc">Directorio enfocado en skills listas para usar y referencias de implementación. <a
+                  href="https://skillsmp.com/" target="_blank">skillsmp.com</a></div>
+            </div>
+          </div>
+
+          <h2>⭐ Mi Top 5 Skills</h2>
+          <div class="info-box concept">
+            <span class="box-icon">📌</span>
+            <div class="box-content">
+              <div class="box-title">Recomendaciones del Instructor</div>
+              <p>Estas son las 5 Skills que más uso en proyectos reales:</p>
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Skill</th>
+                <th>¿Para qué la uso?</th>
+                <th>Tipo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1</strong></td>
+                <td><!-- Tu Skill #1 --></td>
+                <td><!-- Descripción --></td>
+                <td><!-- Proyecto / Personal --></td>
+              </tr>
+              <tr>
+                <td><strong>2</strong></td>
+                <td><!-- Tu Skill #2 --></td>
+                <td><!-- Descripción --></td>
+                <td><!-- Proyecto / Personal --></td>
+              </tr>
+              <tr>
+                <td><strong>3</strong></td>
+                <td><!-- Tu Skill #3 --></td>
+                <td><!-- Descripción --></td>
+                <td><!-- Proyecto / Personal --></td>
+              </tr>
+              <tr>
+                <td><strong>4</strong></td>
+                <td><!-- Tu Skill #4 --></td>
+                <td><!-- Descripción --></td>
+                <td><!-- Proyecto / Personal --></td>
+              </tr>
+              <tr>
+                <td><strong>5</strong></td>
+                <td><!-- Tu Skill #5 --></td>
+                <td><!-- Descripción --></td>
+                <td><!-- Proyecto / Personal --></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="step-nav">
+            <button class="nav-btn" data-direction="prev">← Anterior</button>
+            <button class="nav-btn primary" data-direction="next">Siguiente: Hooks →</button>
+          </div>
+        </div>
+
+        <!-- Step C8: Hooks -->
+        <div class="step-section" data-step="c8">
+          <div class="step-header">
+            <div class="step-number">8</div>
+            <div class="step-meta">
+              <h1 class="step-title">Hooks — Automatización por Eventos</h1>
+              <div class="step-duration">⏱ 5 minutos</div>
+            </div>
+          </div>
+          <div class="objectives">
+            <span class="objective-tag">🎯 Configurar hooks en settings.json</span>
+            <span class="objective-tag">🎯 Usar matchers para filtrar herramientas</span>
+            <span class="objective-tag">🎯 Auto-formatear y bloquear archivos</span>
+          </div>
+
+          <div class="info-box note">
+            <span class="box-icon">ℹ️</span>
+            <div class="box-content">
+              <div class="box-title">Skills vs Hooks</div>
+              <p><strong>Skills</strong> = Claude decide cuándo usarlas (o tú las invocas con <code>/nombre</code>).<br>
+                <strong>Hooks</strong> = Comandos deterministas que <strong>siempre</strong> se ejecutan en eventos
+                específicos.
+              </p>
+            </div>
+          </div>
+
+          <h2>¿Qué hace un Hook y cómo se estructura?</h2>
+          <p>Un hook ejecuta lógica automática en puntos concretos del ciclo de Claude Code. La estructura oficial es:
+            <strong>evento → matcher → hooks[]</strong>. En hooks de comando, Claude envía JSON por stdin con el
+            contexto del evento, y tu script decide si permite, bloquea o solo registra.
+          </p>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">json</span><span
+                class="code-filename">Estructura mínima en settings.json</span><button class="copy-btn">📋
+                Copiar</button></div>
+            <pre>{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/block-risky-commands.sh"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/format.sh"
+          }
+        ]
+      }
+    ]
+  }
+}</pre>
+          </div>
+
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">bash</span><span
+                class="code-filename">.claude/hooks/block-risky-commands.sh</span><button class="copy-btn">📋
+                Copiar</button></div>
+            <pre>#!/usr/bin/env bash
+INPUT="$(cat)"
+CMD="$(echo "$INPUT" | jq -r '.tool_input.command // empty')"
+
+if echo "$CMD" | grep -Eq 'rm -rf|sudo rm'; then
+  jq -n '{
+    hookSpecificOutput: {
+      hookEventName: "PreToolUse",
+      permissionDecision: "deny",
+      permissionDecisionReason: "Comando destructivo bloqueado por policy"
+    }
+  }'
+  exit 0
+fi
+
+exit 0</pre>
+          </div>
+
+          <h2>Tipos de Hook Handler</h2>
+          <ul>
+            <li><code>type: "command"</code>: corre scripts/comandos shell (determinista)</li>
+            <li><code>type: "prompt"</code>: validación de una condición con modelo (single-turn)</li>
+            <li><code>type: "agent"</code>: delega validación a subagente con herramientas</li>
+          </ul>
+
+          <h2>Eventos del Ciclo de Vida</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Evento</th>
+                <th>Cuándo se ejecuta</th>
+                <th>Uso típico</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>PreToolUse</code></td>
+                <td>Antes de usar una herramienta</td>
+                <td>Bloquear ediciones a archivos protegidos</td>
+              </tr>
+              <tr>
+                <td><code>PostToolUse</code></td>
+                <td>Después de usar una herramienta</td>
+                <td>Auto-formatear código</td>
+              </tr>
+              <tr>
+                <td><code>Stop</code></td>
+                <td>Cuando Claude termina de responder</td>
+                <td>Validación final</td>
+              </tr>
+              <tr>
+                <td><code>Notification</code></td>
+                <td>Cuando Claude espera input</td>
+                <td>Notificaciones de escritorio</td>
+              </tr>
+              <tr>
+                <td><code>SessionStart</code></td>
+                <td>Al iniciar sesión</td>
+                <td>Inyectar variables de entorno</td>
+              </tr>
+              <tr>
+                <td><code>PreCompact</code></td>
+                <td>Antes de compactar contexto</td>
+                <td>Re-inyectar info crítica</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>Ejemplo Completo de Hooks</h2>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">json</span><span
+                class="code-filename">.claude/settings.json (sección hooks)</span><button class="copy-btn">📋
+                Copiar</button></div>
+            <pre>{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [{
+          "type": "command",
+          "command": "npx prettier --write \"$CLAUDE_FILE_PATH\" 2>/dev/null || true"
+        }]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Edit",
+        "hooks": [{
+          "type": "command",
+          "command": "echo $CLAUDE_TOOL_INPUT | jq -r '.file_path' | grep -q 'prisma/schema.prisma' && echo '{\"decision\":\"block\",\"reason\":\"No editar schema.prisma directamente.\"}' || true"
+        }]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [{
+          "type": "command",
+          "command": "notify-send 'Claude Code' 'Necesita tu atención' 2>/dev/null || true"
+        }]
+      }
+    ]
+  }
+}</pre>
+          </div>
+
+          <div class="info-box tip">
+            <span class="box-icon">💡</span>
+            <div class="box-content">
+              <div class="box-title">Tip</div>
+              <p>Usa <code>/hooks</code> dentro de Claude Code para crear y gestionar hooks visualmente sin editar JSON
+                manualmente.</p>
+            </div>
+          </div>
+
+          <h2>🏪 Marketplaces y Repositorios de Hooks</h2>
+          <div class="card-grid">
+            <div class="card">
+              <div class="card-icon">🐙</div>
+              <div class="card-title">GitHub: Claude Code Hooks Examples</div>
+              <div class="card-desc">Ejemplos oficiales de Hooks para distintos flujos de trabajo. <a
+                  href="https://github.com/anthropics/claude-code" target="_blank">GitHub Repo</a></div>
+            </div>
+            <div class="card">
+              <div class="card-icon">📖</div>
+              <div class="card-title">Anthropic Docs: Hooks</div>
+              <div class="card-desc">Guía oficial de configuración y eventos disponibles. <a
+                  href="https://docs.anthropic.com/en/docs/claude-code/hooks" target="_blank">Documentación</a></div>
+            </div>
+            <div class="card">
+              <div class="card-icon">🔧</div>
+              <div class="card-title">Community Hook Recipes</div>
+              <div class="card-desc">Recetas de la comunidad para auto-formateo, linting, notificaciones y protección de
+                archivos. <a href="https://www.anthropic.com/discord" target="_blank">Discord #claude-code</a></div>
+            </div>
+            <div class="card">
+              <div class="card-icon">🧩</div>
+              <div class="card-title">AITMPL</div>
+              <div class="card-desc">Plantillas de automatización que puedes adaptar como Hooks de validación y flujo.
+                <a href="https://www.aitmpl.com/" target="_blank">aitmpl.com</a></div>
+            </div>
+          </div>
+
+          <div class="step-nav">
+            <button class="nav-btn" data-direction="prev">← Anterior</button>
+            <button class="nav-btn primary" data-direction="next">Siguiente: Subagentes →</button>
+          </div>
+        </div>
+
+        <!-- Step C9: Subagentes -->
+        <div class="step-section" data-step="c9">
+          <div class="step-header">
+            <div class="step-number">9</div>
+            <div class="step-meta">
+              <h1 class="step-title">Subagentes — Delegación Inteligente</h1>
+              <div class="step-duration">⏱ 3 minutos</div>
+            </div>
+          </div>
+          <div class="objectives">
+            <span class="objective-tag">🎯 Conocer los subagentes built-in</span>
+            <span class="objective-tag">🎯 Crear subagentes personalizados</span>
+            <span class="objective-tag">🎯 Decidir cuándo delegar</span>
+          </div>
+
+          <h2>Subagentes Integrados</h2>
+          <div class="card-grid">
+            <div class="card">
+              <div class="card-icon">🔍</div>
+              <div class="card-title">Explore</div>
+              <div class="card-desc">Modelo Haiku, solo lectura. Optimizado para búsqueda rápida en el codebase.
+                Económico.</div>
+            </div>
+            <div class="card">
+              <div class="card-icon">📋</div>
+              <div class="card-title">Plan</div>
+              <div class="card-desc">Hereda modelo, solo lectura. Investiga para construir planes detallados de
+                implementación.</div>
+            </div>
+            <div class="card">
+              <div class="card-icon">🤖</div>
+              <div class="card-title">General-purpose</div>
+              <div class="card-desc">Hereda modelo, todas las herramientas. Para tareas complejas multi-paso.</div>
+            </div>
+          </div>
+
+          <h2>Crear un Subagente Personalizado</h2>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">markdown</span><span
+                class="code-filename">.claude/agents/test-writer.md</span><button class="copy-btn">📋 Copiar</button>
+            </div>
+            <pre>---
+description: Genera tests unitarios e integración para módulos
+model: sonnet
+tools:
+  - Read
+  - Edit
+  - Write
+  - Bash
+  - Glob
+  - Grep
+---
+
+# Test Writer Agent
+
+Eres un agente especializado en escribir tests unitarios de React.
+
+## Reglas
+- Framework: Jest + React Testing Library (o Vitest)
+- Probar que los componentes de la interfaz como `Sidebar` y `CustomerTable` se renderizan sin crashear
+- Simula clics (ej. `fireEvent.click`) interactuando con elementos accesibles (role="button")
+- Mockear `next/navigation` useRouter/usaPathname y llamadas a base de datos de Prisma
+- Nombrar tests descriptivamente: "al hacer clic en Guardar, llama a onSubmit"
+
+## Proceso
+1. Lee el componente objetivo en `src/components/`
+2. Construye los escenarios de prueba
+3. Genera el archivo en la carpeta `__tests__` o con extensión `.test.tsx`
+4. Ejecuta pruebas parciales para confirmar que pasan</pre>
+          </div>
+
+          <h2>Otro Ejemplo: Code Reviewer</h2>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">markdown</span><span
+                class="code-filename">.claude/agents/code-reviewer.md</span><button class="copy-btn">📋 Copiar</button>
+            </div>
+            <pre>---
+description: Revisa código buscando bugs, seguridad y mejoras
+model: haiku
+tools:
+  - Read
+  - Grep
+  - Glob
+---
+
+# Code Reviewer
+
+Revisa el código buscando:
+1. Vulnerabilidades de seguridad (SQL injection, XSS)
+2. Bugs lógicos (null references, race conditions)
+3. Code smells (funciones largas, duplicación)
+4. Mejoras de rendimiento
+
+Genera un reporte con prioridad: CRITICAL > HIGH > MEDIUM > LOW</pre>
+          </div>
+
+          <div class="info-box tip">
+            <span class="box-icon">💡</span>
+            <div class="box-content">
+              <div class="box-title">¿Cuándo delegar?</div>
+              <p>Usa subagentes cuando quieras: <strong>preservar contexto principal</strong>, <strong>controlar
+                  costos</strong> (Haiku para tareas simples), y <strong>especializar comportamiento</strong>.</p>
+            </div>
+          </div>
+
+          <div class="step-nav">
+            <button class="nav-btn" data-direction="prev">← Anterior</button>
+            <button class="nav-btn primary" data-direction="next">Siguiente: Headless y CI/CD →</button>
+          </div>
+        </div>
+
+        <!-- Step C10: Headless y CI/CD -->
+        <div class="step-section" data-step="c10">
+          <div class="step-header">
+            <div class="step-number">10</div>
+            <div class="step-meta">
+              <h1 class="step-title">Headless, Costos y CI/CD</h1>
+              <div class="step-duration">⏱ 2 minutos</div>
+            </div>
+          </div>
+          <div class="objectives">
+            <span class="objective-tag">🎯 Usar modo headless (-p) en scripts</span>
+            <span class="objective-tag">🎯 Monitorear y optimizar costos</span>
+            <span class="objective-tag">🎯 Configurar GitHub Actions con Claude</span>
+          </div>
+
+          <h2>Modo Headless (-p)</h2>
+          <p>Ejecuta Claude en modo no-interactivo para integrarlo en scripts y pipelines:</p>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">bash</span><span class="code-filename">Scripts de
+                ejemplo</span><button class="copy-btn">📋 Copiar</button></div>
+            <pre># Query simple
+claude -p "explica qué hace la función processPayment"
+
+# Piping: analizar logs
+cat error.log | claude -p "explica este error y sugiere la solución"
+
+# Output JSON estructurado
+claude -p "lista los endpoints de la API" --output-format json
+
+# Limitar presupuesto
+claude -p "revisa seguridad del proyecto" --max-budget-usd 2.00
+
+# Linter semántico con Claude
+git diff main --name-only -- '*.ts' | while read file; do
+  cat "$file" | claude -p \
+    "Busca bugs lógicos y vulnerabilidades. Formato: ARCHIVO:LINEA - PROBLEMA" \
+    --output-format text --max-budget-usd 0.50
+done</pre>
+          </div>
+
+          <h2>Monitoreo de Costos</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Comando</th>
+                <th>Información</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>/cost</code></td>
+                <td>Costo total de la sesión, duración, cambios</td>
+              </tr>
+              <tr>
+                <td><code>/context</code></td>
+                <td>Qué consume espacio en la ventana de contexto</td>
+              </tr>
+              <tr>
+                <td><code>/compact</code></td>
+                <td>Compactar contexto (preservar lo esencial)</td>
+              </tr>
+              <tr>
+                <td><code>/model sonnet</code></td>
+                <td>Cambiar a modelo más económico</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="info-box tip">
+            <span class="box-icon">💰</span>
+            <div class="box-content">
+              <div class="box-title">Optimización de costos</div>
+              <p><strong>opusplan</strong>: Opus planifica → Sonnet ejecuta. Mejor balance calidad/costo.<br>
+                <strong>/clear</strong> entre tareas no relacionadas.<br>
+                Mover instrucciones largas de CLAUDE.md a skills (se cargan bajo demanda).
+              </p>
+            </div>
+          </div>
+
+          <h2>GitHub Actions — Claude como Revisor de PRs</h2>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">yaml</span><span
+                class="code-filename">.github/workflows/claude-review.yml</span><button class="copy-btn">📋
+                Copiar</button></div>
+            <pre>name: Claude Code Review
+on:
+  pull_request:
+    types: [opened, synchronize]
+  issue_comment:
+    types: [created]
+
+jobs:
+  claude-review:
+    if: |
+      (github.event_name == 'pull_request') ||
+      (github.event_name == 'issue_comment' &&
+       contains(github.event.comment.body, '@claude'))
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
+    steps:
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          model: sonnet</pre>
+          </div>
+
+          <p>Con esta configuración, puedes escribir <code>@claude revisa este código</code> en cualquier PR y Claude lo
+            revisará automáticamente según las reglas del <code>CLAUDE.md</code> del repo.</p>
+
+          <div class="step-nav">
+            <button class="nav-btn" data-direction="prev">← Anterior</button>
+            <button class="nav-btn primary" data-direction="next">Siguiente: Agent Teams →</button>
+          </div>
+        </div>
+        <!-- Step C11: Agent Teams -->
+        <div class="step-section" data-step="c11">
+          <div class="step-header">
+            <div class="step-number">11</div>
+            <div class="step-meta">
+              <h1 class="step-title">Agent Teams — Equipos de Agentes en Paralelo</h1>
+              <div class="step-duration">⏱ 8 minutos</div>
+            </div>
+          </div>
+          <div class="objectives">
+            <span class="objective-tag">🎯 Entender cuándo usar Agent Teams vs Subagentes</span>
+            <span class="objective-tag">🎯 Configurar y lanzar un equipo de agentes</span>
+            <span class="objective-tag">🎯 Controlar, comunicar y coordinar teammates</span>
+            <span class="objective-tag">🎯 Aplicar mejores prácticas en proyectos reales</span>
+          </div>
+
+          <div class="info-box concept">
+            <span class="box-icon">🤝</span>
+            <div class="box-content">
+              <div class="box-title">¿Qué son los Agent Teams?</div>
+              <p><strong>Agent Teams</strong> te permiten orquestar <strong>múltiples sesiones de Claude Code trabajando
+                  en paralelo</strong> como un equipo coordinado. Un agente <em>líder</em> gestiona a varios
+                <em>teammates</em>, cada uno con su propio contexto y tareas asignadas, comunicándose entre sí mediante
+                mensajes.</p>
+            </div>
+          </div>
+
+          <h2>¿Cuándo Usar Agent Teams?</h2>
+          <p>Agent Teams es ideal para tareas que se benefician del <strong>trabajo paralelo y coordinado</strong>:</p>
+          <div class="card-grid">
+            <div class="card">
+              <div class="card-icon">🔍</div>
+              <div class="card-title">Investigación y Revisión</div>
+              <div class="card-desc">Múltiples teammates investigan diferentes aspectos de un problema simultáneamente,
+                comparten hallazgos y desafían las conclusiones del otro.</div>
+            </div>
+            <div class="card">
+              <div class="card-icon">🧩</div>
+              <div class="card-title">Nuevos Módulos o Features</div>
+              <div class="card-desc">Cada teammate trabaja en una pieza independiente sin interferir con los demás. Ej:
+                frontend, backend y tests en paralelo.</div>
+            </div>
+            <div class="card">
+              <div class="card-icon">🐛</div>
+              <div class="card-title">Debugging con Hipótesis Competidoras</div>
+              <div class="card-desc">Teammates prueban diferentes teorías en paralelo y convergen en la respuesta más
+                rápido.</div>
+            </div>
+            <div class="card">
+              <div class="card-icon">🔗</div>
+              <div class="card-title">Coordinación Cross-Layer</div>
+              <div class="card-desc">Cambios que abarcan frontend, backend y tests — cada uno gestionado por un teammate
+                diferente.</div>
+            </div>
+          </div>
+
+          <h2>Agent Teams vs Subagentes</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Característica</th>
+                <th>Subagentes</th>
+                <th>Agent Teams</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Contexto</strong></td>
+                <td>Comparten la sesión del padre</td>
+                <td>Cada uno tiene su propia ventana de contexto</td>
+              </tr>
+              <tr>
+                <td><strong>Comunicación</strong></td>
+                <td>Retornan resultado al padre</td>
+                <td>Mensajes bidireccionales entre teammates</td>
+              </tr>
+              <tr>
+                <td><strong>Paralelismo</strong></td>
+                <td>Limitado (dentro de la sesión)</td>
+                <td>Verdadero paralelismo (sesiones separadas)</td>
+              </tr>
+              <tr>
+                <td><strong>Mejor para</strong></td>
+                <td>Tareas ligeras de investigación o verificación</td>
+                <td>Trabajo complejo que requiere coordinación</td>
+              </tr>
+              <tr>
+                <td><strong>Costos</strong></td>
+                <td>Compartidos con la sesión principal</td>
+                <td>Cada teammate consume tokens independientemente</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>Habilitar Agent Teams</h2>
+          <p>Agent Teams es una feature experimental. Actívala con la variable de entorno o en settings:</p>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">bash</span><span class="code-filename">Variable de
+                entorno</span><button class="copy-btn">📋 Copiar</button></div>
+            <pre>export CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1</pre>
+          </div>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">json</span><span
+                class="code-filename">.claude/settings.json</span><button class="copy-btn">📋 Copiar</button></div>
+            <pre>{
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  }
+}</pre>
+          </div>
+
+          <h2>Lanzar tu Primer Equipo</h2>
+          <p>Simplemente describe la tarea y pide un equipo. Claude creará los teammates automáticamente:</p>
+          <div class="prompt-box">
+            <div class="prompt-label">💬 Prompt — Agent Team para el CRM</div>
+            <div class="prompt-text">Necesito agregar un módulo de reportes al CRM. Crea un agent team con: un teammate
+              para diseñar el esquema de datos en Prisma, otro para crear las rutas de API en Next.js, y otro para
+              construir los componentes de UI con Tailwind. Coordinen entre sí para asegurar consistencia.</div><button
+              class="copy-btn">📋 Copiar</button>
+          </div>
+
+          <div class="info-box tip">
+            <span class="box-icon">💡</span>
+            <div class="box-content">
+              <div class="box-title">¿Qué pasa al crear un equipo?</div>
+              <p>Claude analiza tu petición, crea una <strong>lista de tareas compartida</strong>, y spawna los
+                teammates necesarios. Cada teammate recibe su contexto inicial y comienza a trabajar de forma autónoma.
+                El líder coordina y tú puedes monitorear el progreso.</p>
+            </div>
+          </div>
+
+          <h2>Controlar tu Equipo</h2>
+
+          <h3>Modos de Visualización</h3>
+          <div class="card-grid">
+            <div class="card">
+              <div class="card-icon">📺</div>
+              <div class="card-title">In-Process</div>
+              <div class="card-desc">Todos los teammates corren dentro de tu terminal principal. Usa
+                <kbd>Shift</kbd>+<kbd>Down</kbd> para navegar entre ellos. Funciona en cualquier terminal.</div>
+            </div>
+            <div class="card">
+              <div class="card-icon">🪟</div>
+              <div class="card-title">Split Panes (tmux)</div>
+              <div class="card-desc">Cada teammate tiene su propio panel. Ves el output de todos simultáneamente.
+                Requiere <code>tmux</code> o iTerm2.</div>
+            </div>
+          </div>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">json</span><span
+                class="code-filename">.claude/settings.json</span><button class="copy-btn">📋 Copiar</button></div>
+            <pre>// Forzar modo in-process (sin tmux)
+{ "teammateMode": "in-process" }
+
+// O desde la línea de comandos:
+// claude --teammate-mode in-process</pre>
+          </div>
+
+          <h3>Comunicarte con Teammates</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Acción</th>
+                <th>In-Process</th>
+                <th>Split Panes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Navegar teammates</strong></td>
+                <td><kbd>Shift</kbd>+<kbd>Down</kbd> para ciclar</td>
+                <td>Click en el panel del teammate</td>
+              </tr>
+              <tr>
+                <td><strong>Enviar mensaje</strong></td>
+                <td>Navega al teammate y escribe</td>
+                <td>Click en su panel y escribe</td>
+              </tr>
+              <tr>
+                <td><strong>Ver sesión</strong></td>
+                <td><kbd>Enter</kbd> para ver, <kbd>Escape</kbd> para interrumpir</td>
+                <td>Visible directamente en el panel</td>
+              </tr>
+              <tr>
+                <td><strong>Ver lista de tareas</strong></td>
+                <td><kbd>Ctrl</kbd>+<kbd>T</kbd></td>
+                <td><kbd>Ctrl</kbd>+<kbd>T</kbd></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Especificar Modelos y Pedir Aprobación</h3>
+          <div class="prompt-box">
+            <div class="prompt-label">💬 Prompt — Equipo con modelos específicos</div>
+            <div class="prompt-text">Crea un equipo con 3 teammates para refactorizar estos módulos en paralelo. Usa
+              Sonnet para cada teammate.</div><button class="copy-btn">📋 Copiar</button>
+          </div>
+          <div class="prompt-box">
+            <div class="prompt-label">💬 Prompt — Requerir aprobación de plan</div>
+            <div class="prompt-text">Crea un teammate arquitecto para refactorizar el módulo de autenticación. Requiere
+              aprobación del plan antes de hacer cambios.</div><button class="copy-btn">📋 Copiar</button>
+          </div>
+
+          <h3>Gestionar el Equipo</h3>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">bash</span><span class="code-filename">Comandos de
+                gestión</span><button class="copy-btn">📋 Copiar</button></div>
+            <pre># Pedir a un teammate que se detenga
+"Pide al teammate investigador que se detenga"
+
+# Limpiar el equipo completo cuando termines
+"Limpia el equipo"
+
+# Esperar a que terminen antes de continuar
+"Espera a que tus teammates completen sus tareas antes de continuar"</pre>
+          </div>
+
+          <h2>Hooks para Quality Gates</h2>
+          <p>Usa hooks específicos de Agent Teams para controlar calidad:</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Hook</th>
+                <th>Cuándo se ejecuta</th>
+                <th>Uso</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>TeammateIdle</code></td>
+                <td>Cuando un teammate va a quedar inactivo</td>
+                <td>Exit code 2 → envía feedback y mantiene al teammate trabajando</td>
+              </tr>
+              <tr>
+                <td><code>TaskCompleted</code></td>
+                <td>Cuando una tarea se marca como completada</td>
+                <td>Exit code 2 → previene completar y envía feedback</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>Arquitectura Interna</h2>
+          <div class="info-box note">
+            <span class="box-icon">ℹ️</span>
+            <div class="box-content">
+              <div class="box-title">¿Cómo funciona por dentro?</div>
+              <p>El <strong>Lead</strong> (tu sesión principal) spawna teammates como sesiones independientes de Claude
+                Code. Todos comparten un directorio de configuración del equipo y una lista de tareas compartida:
+              </p>
+              <ul>
+                <li><code>~/.claude/teams/{team-name}/config.json</code> — Configuración del equipo</li>
+                <li><code>~/.claude/tasks/{team-name}/</code> — Lista de tareas compartida</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3>Comunicación y Contexto</h3>
+          <ul>
+            <li>📨 <strong>Entrega automática</strong> — Cuando un teammate envía un mensaje, se entrega automáticamente
+              al destinatario</li>
+            <li>🔔 <strong>Notificaciones idle</strong> — Cuando un teammate termina, notifica automáticamente al líder
+            </li>
+            <li>📋 <strong>Lista de tareas compartida</strong> — Todos los agentes ven el estado y pueden reclamar
+              trabajo disponible</li>
+            <li>💬 <strong>message</strong> — Envía a un teammate específico</li>
+            <li>📣 <strong>broadcast</strong> — Envía a todos simultáneamente (usar con moderación por costos)</li>
+          </ul>
+
+          <h2>Casos de Uso Prácticos</h2>
+
+          <h3>Code Review en Paralelo</h3>
+          <div class="prompt-box">
+            <div class="prompt-label">💬 Prompt — Review paralelo del CRM</div>
+            <div class="prompt-text">Crea un agent team para revisar el PR #42 del CRM. Spawn tres revisores:
+              - Uno enfocado en implicaciones de seguridad de las rutas de API
+              - Uno verificando impacto en rendimiento de las queries de Prisma
+              - Uno validando cobertura de tests
+              Que cada uno revise y reporte sus hallazgos.</div><button class="copy-btn">📋 Copiar</button>
+          </div>
+
+          <h3>Debugging con Hipótesis Competidoras</h3>
+          <div class="prompt-box">
+            <div class="prompt-label">💬 Prompt — Debugging paralelo</div>
+            <div class="prompt-text">Los usuarios reportan que el dashboard del CRM tarda más de 10 segundos en cargar.
+              Spawn 3 teammates para investigar diferentes hipótesis:
+              - Teammate 1: queries N+1 en Prisma y problemas de índices
+              - Teammate 2: renderizado excesivo en componentes React
+              - Teammate 3: tamaño del bundle y carga de assets
+              Que hablen entre sí para refutar las teorías del otro y converjan en un diagnóstico.</div><button
+              class="copy-btn">📋 Copiar</button>
+          </div>
+
+          <h3>Feature Cross-Layer para el CRM</h3>
+          <div class="prompt-box">
+            <div class="prompt-label">💬 Prompt — Feature completa con team</div>
+            <div class="prompt-text">Necesito agregar un módulo de "Notas" al CRM (cada cliente puede tener múltiples
+              notas). Crea un agent team:
+              - Teammate "schema": agrega el modelo Note en Prisma y corre la migración
+              - Teammate "api": crea las rutas CRUD en src/app/api/notes/
+              - Teammate "ui": crea el componente NotesPanel en src/components/
+              - Teammate "tests": escribe tests para la API y componentes
+              Coordinen para usar los mismos nombres de campos y tipos.</div><button class="copy-btn">📋 Copiar</button>
+          </div>
+
+          <h2>Mejores Prácticas</h2>
+          <div class="card-grid">
+            <div class="card">
+              <div class="card-icon">📝</div>
+              <div class="card-title">Da Contexto Suficiente</div>
+              <div class="card-desc">Los teammates no comparten la ventana de contexto del líder. Al spawnearlos,
+                incluye paths relevantes, convenciones del proyecto y reglas.</div>
+            </div>
+            <div class="card">
+              <div class="card-icon">📏</div>
+              <div class="card-title">Tamaño Apropiado del Equipo</div>
+              <div class="card-desc">2-5 teammates es ideal. Los costos escalan linealmente y la coordinación se
+                complica con equipos grandes. Más no siempre es mejor.</div>
+            </div>
+            <div class="card">
+              <div class="card-icon">📦</div>
+              <div class="card-title">Dimensiona las Tareas</div>
+              <div class="card-desc">Ni muy pequeñas (el overhead no vale la pena) ni muy grandes (mucho tiempo sin
+                check-ins). Unidades autocontenidas: una función, un archivo de test, una review.</div>
+            </div>
+            <div class="card">
+              <div class="card-icon">📂</div>
+              <div class="card-title">Evita Conflictos de Archivos</div>
+              <div class="card-desc">Asigna archivos diferentes a cada teammate. Si dos teammates editan el mismo
+                archivo, habrá conflictos de merge.</div>
+            </div>
+            <div class="card">
+              <div class="card-icon">🔬</div>
+              <div class="card-title">Empieza con Research</div>
+              <div class="card-desc">Los equipos funcionan mejor cuando empiezan con investigación y luego pasan a
+                implementación, en lugar de saltar directo a escribir código.</div>
+            </div>
+            <div class="card">
+              <div class="card-icon">👀</div>
+              <div class="card-title">Monitorea y Dirige</div>
+              <div class="card-desc">Revisa el progreso periódicamente. Envía mensajes para redirigir si algún teammate
+                va por mal camino.</div>
+            </div>
+          </div>
+
+          <h2>Troubleshooting</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Problema</th>
+                <th>Solución</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Teammates no aparecen</strong></td>
+                <td>En in-process, presiona <kbd>Shift</kbd>+<kbd>Down</kbd>. Si usas split panes, verifica que
+                  <code>tmux</code> esté instalado: <code>which tmux</code></td>
+              </tr>
+              <tr>
+                <td><strong>Demasiados prompts de permisos</strong></td>
+                <td>Configura permisos adecuados en <code>.claude/settings.json</code> con reglas de <code>allow</code>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Teammates se detienen por errores</strong></td>
+                <td>Envíales instrucciones adicionales directamente, o spawna un reemplazo</td>
+              </tr>
+              <tr>
+                <td><strong>El líder termina antes que el equipo</strong></td>
+                <td>Pide al líder: <em>"Espera a que tus teammates completen sus tareas"</em></td>
+              </tr>
+              <tr>
+                <td><strong>Sesiones tmux huérfanas</strong></td>
+                <td><code>tmux ls</code> para listar y <code>tmux kill-session -t &lt;nombre&gt;</code> para limpiar
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>Limitaciones Actuales</h2>
+          <div class="info-box warning">
+            <span class="box-icon">⚠️</span>
+            <div class="box-content">
+              <div class="box-title">Ten en cuenta</div>
+              <ul>
+                <li><strong>Sin <code>/resume</code> para teammates in-process</strong> — Al reanudar sesión, los
+                  teammates ya no existen. Spawna nuevos si es necesario.</li>
+                <li><strong>Un equipo por sesión</strong> — Limpia el equipo actual antes de crear uno nuevo.</li>
+                <li><strong>Sin equipos anidados</strong> — Solo el líder puede crear y gestionar el equipo.</li>
+                <li><strong>Líder fijo</strong> — La sesión que crea el equipo es el líder de por vida.</li>
+                <li><strong>Permisos al spawn</strong> — Todos los teammates inician con el modo de permisos del líder.
+                </li>
+                <li><strong>Split panes requiere tmux/iTerm2</strong> — No soportado en terminal integrada de VS Code ni
+                  Windows Terminal.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="info-box tip">
+            <span class="box-icon">🚀</span>
+            <div class="box-content">
+              <div class="box-title">Próximos Pasos</div>
+              <p>Ahora que conoces Agent Teams, combínalos con <strong>Subagentes</strong> para delegación ligera,
+                <strong>Git Worktrees</strong> para sesiones paralelas manuales, y <strong>Hooks</strong> para quality
+                gates automáticos.
+                Documentación completa: <a href="https://code.claude.com/docs/en/agent-teams"
+                  target="_blank">code.claude.com/docs/en/agent-teams</a></p>
+            </div>
+          </div>
+
+          <div class="step-nav">
+            <button class="nav-btn" data-direction="prev">← Anterior</button>
+            <button class="nav-btn primary" data-direction="next" disabled>Fin del Módulo Claude Code ✓</button>
+          </div>
+        </div>
+
+      </div><!-- /module-claude -->
+
+      <!-- ═══════════════════════════════════════════ -->
+      <!-- MODULE: ANTIGRAVITY                        -->
+      <!-- ═══════════════════════════════════════════ -->
+      <div id="module-antigravity" class="module-content">
+
+        <!-- Step A1: ¿Qué es Antigravity? -->
+        <div class="step-section active" data-step="a1">
+          <div class="step-header">
+            <div class="step-number">1</div>
+            <div class="step-meta">
+              <h1 class="step-title">¿Qué es Google Antigravity?</h1>
+              <div class="step-duration">⏱ 5 minutos</div>
+            </div>
+          </div>
+          <div class="objectives">
+            <span class="objective-tag">🎯 Entender el cambio de paradigma</span>
+            <span class="objective-tag">🎯 Diferenciar síncrono vs asíncrono</span>
+            <span class="objective-tag">🎯 Conocer la "Manager Surface"</span>
+          </div>
+
+          <figure class="module-image">
+            <img src="images/Antigravity.png" alt="Pantalla de bienvenida de Google Antigravity" loading="lazy">
+            <figcaption>Google Antigravity: vista de introducción de la plataforma.</figcaption>
+          </figure>
+
+          <h2>De "Pair Programming" a "Delegación de Tareas"</h2>
+          <p>Google Antigravity es el <strong>AI-Native IDE</strong> de Google — una herramienta de desarrollo donde la
+            IA no es un complemento, sino el motor principal. Su lema es <em>"Build the new way"</em>.</p>
+          <div class="card-grid">
+            <div class="card">
+              <div class="card-icon">👥</div>
+              <div class="card-title">Antes: Pair Programming (Síncrono)</div>
+              <div class="card-desc">Tú y el agente trabajan juntos en tiempo real. Tú escribes, el agente sugiere.
+                Requiere tu atención constante.</div>
+            </div>
+            <div class="card">
+              <div class="card-icon">📋</div>
+              <div class="card-title">Ahora: Delegación (Asíncrono)</div>
+              <div class="card-desc">Defines la tarea, el agente trabaja de forma autónoma. Tú revisas los artefactos
+                resultantes cuando termina.</div>
+            </div>
+          </div>
+
+          <h2>Antigravity como "Mission Control"</h2>
+          <p>Antigravity es la superficie de gestión (<strong>Manager Surface</strong>) de Google para orquestar agentes
+            de código de forma asíncrona. Piénsalo como un <strong>"Mission Control"</strong> donde:</p>
+          <ul>
+            <li>🚀 <strong>Lanzas tareas</strong> — Define qué quieres que el agente haga en lenguaje natural</li>
+            <li>📊 <strong>Monitorizas progreso</strong> — Ves artefactos en tiempo real sin leer logs de chat</li>
+            <li>✅ <strong>Revisas resultados</strong> — Apruebas planes de implementación, diffs visuales, PRs</li>
+            <li>🔄 <strong>Iteras</strong> — Das feedback y el agente ajusta automáticamente</li>
+          </ul>
+
+          <h2>Dos Componentes Principales</h2>
+          <div class="card-grid">
+            <div class="card">
+              <div class="card-icon">🧠</div>
+              <div class="card-title">Agent Manager</div>
+              <div class="card-desc">La vista de gestión donde creas workspaces, lanzas agentes, monitoreas sesiones y
+                revisas resultados. Es tu "centro de mando".</div>
+            </div>
+            <div class="card">
+              <div class="card-icon">✏️</div>
+              <div class="card-title">Editor</div>
+              <div class="card-desc">Editor de código integrado basado en Monaco (VS Code). Edita archivos, navega el
+                proyecto y trabaja con el agente en contexto visual.</div>
+            </div>
+          </div>
+
+          <div class="info-box concept">
+            <span class="box-icon">🔑</span>
+            <div class="box-content">
+              <div class="box-title">Concepto Clave</div>
+              <p>Dejamos de <strong>leer logs de chat</strong> y empezamos a <strong>revisar Artifacts</strong>: planes
+                de implementación, diffs visuales, screenshots de validación. El output del agente es un documento
+                estructurado, no una conversación.</p>
+            </div>
+          </div>
+
+          <div class="step-nav">
+            <button class="nav-btn" data-direction="prev" disabled>← Anterior</button>
+            <button class="nav-btn primary" data-direction="next">Siguiente: Instalación y Setup →</button>
+          </div>
+        </div>
+
+        <!-- Step A2: Instalación y Setup -->
+        <div class="step-section" data-step="a2">
+          <div class="step-header">
+            <div class="step-number">2</div>
+            <div class="step-meta">
+              <h1 class="step-title">Instalación y Setup</h1>
+              <div class="step-duration">⏱ 3 minutos</div>
+            </div>
+          </div>
+          <div class="objectives">
+            <span class="objective-tag">🎯 Descargar e instalar Antigravity</span>
+            <span class="objective-tag">🎯 Autenticarse con cuenta Google</span>
+            <span class="objective-tag">🎯 Conocer requisitos del sistema</span>
+          </div>
+
+          <h2>Descarga</h2>
+          <p>Visita <a href="https://antigravity.google/download" target="_blank">antigravity.google/download</a> para
+            descargar Google Antigravity.</p>
+
+          <h2>Requisitos del Sistema</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Plataforma</th>
+                <th>Requisito Mínimo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>macOS</strong></td>
+                <td>Versión 12 (Monterey) o posterior. <strong>Solo Apple Silicon</strong> (ARM). x86 no soportado.</td>
+              </tr>
+              <tr>
+                <td><strong>Windows</strong></td>
+                <td>Windows 10 (64 bit) o posterior</td>
+              </tr>
+              <tr>
+                <td><strong>Linux</strong></td>
+                <td>glibc ≥ 2.28, glibcxx ≥ 3.4.25 (Ubuntu 20+, Debian 10+, Fedora 36+, RHEL 8+)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>Autenticación</h2>
+          <p>Antigravity requiere una <strong>cuenta personal de Google</strong> (@gmail.com). Las cuentas de Workspace
+            pueden tener restricciones según la organización.</p>
+          <div class="info-box warning">
+            <span class="box-icon">⚠️</span>
+            <div class="box-content">
+              <div class="box-title">Requisitos de Autenticación</div>
+              <ul>
+                <li>Debes ser <strong>mayor de 18 años</strong> — si tu edad no está verificada, hazlo en <a
+                    href="https://myaccount.google.com/age-verification"
+                    target="_blank">myaccount.google.com/age-verification</a></li>
+                <li>Tu cuenta debe estar en un <strong>país aprobado</strong> (la mayoría de América, Europa, África,
+                  Asia y Oceanía)</li>
+                <li>Si tienes problemas con cuentas Workspace, prueba con una cuenta @gmail.com personal</li>
+              </ul>
+            </div>
+          </div>
+
+          <h2>Actualizaciones</h2>
+          <p>La aplicación muestra una notificación cuando hay actualizaciones disponibles. Solo necesitas hacer clic en
+            <strong>"Restart to Update"</strong> para aplicar la última versión.
+          </p>
+
+          <h2>Primer Inicio</h2>
+          <ol>
+            <li>Descarga e instala Antigravity para tu plataforma</li>
+            <li>Abre la aplicación — se abrirá el <strong>Agent Manager</strong></li>
+            <li>Inicia sesión con tu cuenta de Google</li>
+            <li>Crea tu primer <strong>Workspace</strong> conectando un repositorio</li>
+          </ol>
+
+          <div class="step-nav">
+            <button class="nav-btn" data-direction="prev">← Anterior</button>
+            <button class="nav-btn primary" data-direction="next">Siguiente: Navegación Básica →</button>
+          </div>
+        </div>
+
+        <!-- Step A3: Navegación Básica -->
+        <div class="step-section" data-step="a3">
+          <div class="step-header">
+            <div class="step-number">3</div>
+            <div class="step-meta">
+              <h1 class="step-title">Navegación Básica</h1>
+              <div class="step-duration">⏱ 3 minutos</div>
+            </div>
+          </div>
+          <div class="objectives">
+            <span class="objective-tag">🎯 Navegar entre Agent Manager y Editor</span>
+            <span class="objective-tag">🎯 Dominar atajos de teclado esenciales</span>
+            <span class="objective-tag">🎯 Entender la relación Workspace → Sesión</span>
+          </div>
+
+          <h2>Dos Vistas Principales</h2>
+          <p>Antigravity tiene dos vistas que se complementan:</p>
+          <div class="card-grid">
+            <div class="card">
+              <div class="card-icon">📋</div>
+              <div class="card-title">Agent Manager</div>
+              <div class="card-desc">Vista de gestión. Aquí creas workspaces, lanzas agentes, monitorizas sesiones y
+                revisas artefactos. Es tu vista "macro".</div>
+            </div>
+            <div class="card">
+              <div class="card-icon">✏️</div>
+              <div class="card-title">Editor</div>
+              <div class="card-desc">Vista de código. Editor Monaco con terminal integrada, diffs, y chat lateral con el
+                agente. Es tu vista "micro".</div>
+            </div>
+          </div>
+
+          <h2>Atajos de Navegación</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Atajo</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><kbd>Cmd</kbd>+<kbd>E</kbd></td>
+                <td>Alternar entre Agent Manager ↔ Editor</td>
+              </tr>
+              <tr>
+                <td><kbd>Cmd</kbd>+<kbd>K</kbd></td>
+                <td>Abrir Command Palette (buscar cualquier acción)</td>
+              </tr>
+              <tr>
+                <td><kbd>Cmd</kbd>+<kbd>P</kbd></td>
+                <td>Buscar archivos rápidamente (Quick Open)</td>
+              </tr>
+              <tr>
+                <td><kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd></td>
+                <td>Paleta de comandos del Editor</td>
+              </tr>
+              <tr>
+                <td><kbd>Cmd</kbd>+<kbd>J</kbd></td>
+                <td>Abrir/cerrar terminal integrada</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="info-box tip">
+            <span class="box-icon">💡</span>
+            <div class="box-content">
+              <div class="box-title">Tip: Flujo recomendado</div>
+              <p>Usa el <strong>Agent Manager</strong> para lanzar y monitorear tareas. Cuando necesites ver los cambios
+                en detalle o editar manualmente, cambia al <strong>Editor</strong> con <kbd>Cmd</kbd>+<kbd>E</kbd>.
+                Puedes abrir el Editor desde cualquier workspace haciendo clic en <em>"Focus Editor"</em> en el menú
+                dropdown del workspace.</p>
+            </div>
+          </div>
+
+          <h2>Flujo de Navegación</h2>
+          <div class="diagram-flow">
+            <div class="diagram-step">📋 Agent Manager</div>
+            <span class="diagram-arrow">⇆</span>
+            <div class="diagram-step">✏️ Editor</div>
+            <span class="diagram-arrow">⇆</span>
+            <div class="diagram-step">🖥 Terminal</div>
+          </div>
+          <p>Desde el <strong>Agent Manager</strong>, selecciona un workspace y haz clic en <em>"Open Editor"</em> — o
+            usa <kbd>Cmd</kbd>+<kbd>E</kbd>. Desde el <strong>Editor</strong>, el botón en la barra superior o
+            <kbd>Cmd</kbd>+<kbd>E</kbd> te regresa al Agent Manager.
+          </p>
+
+          <div class="step-nav">
+            <button class="nav-btn" data-direction="prev">← Anterior</button>
+            <button class="nav-btn primary" data-direction="next">Siguiente: Agent Manager →</button>
+          </div>
+        </div>
+
+        <!-- Step A4: Agent Manager -->
+        <div class="step-section" data-step="a4">
+          <div class="step-header">
+            <div class="step-number">4</div>
+            <div class="step-meta">
+              <h1 class="step-title">Agent Manager</h1>
+              <div class="step-duration">⏱ 5 minutos</div>
+            </div>
+          </div>
+          <div class="objectives">
+            <span class="objective-tag">🎯 Crear y configurar Workspaces</span>
+            <span class="objective-tag">🎯 Lanzar sesiones de agente</span>
+            <span class="objective-tag">🎯 Entender checkpoints y revisión</span>
+          </div>
+
+          <h2>¿Qué es un Workspace?</h2>
+          <p>Un <strong>Workspace</strong> es la unidad de trabajo en Antigravity. Conecta un repositorio Git y
+            proporciona el contexto donde el agente opera.</p>
+
+          <h2>Crear un Workspace</h2>
+          <ol>
+            <li>Abre el <strong>Agent Manager</strong></li>
+            <li>Haz clic en <strong>"New Workspace"</strong></li>
+            <li>Conecta un repositorio: GitHub, GitLab, o repositorio local</li>
+            <li>El agente clonará e indexará el repositorio automáticamente</li>
+          </ol>
+
+          <h2>Lanzar una Sesión</h2>
+          <p>Una vez creado el workspace, describe tu tarea en lenguaje natural:</p>
+          <div class="prompt-box">
+            <div class="prompt-label">💬 Tarea CRM — Agent Manager</div>
+            <div class="prompt-text">Analiza el schema de Prisma del CRM (modelos Customer e Interaction) y agrega
+              validación de email y teléfono al endpoint POST /api/customers. Incluye mensajes de error claros y tests.
+            </div><button class="copy-btn">📋 Copiar</button>
+          </div>
+
+          <p>El agente seguirá un flujo estructurado:</p>
+          <div class="diagram-flow">
+            <div class="diagram-step">🧠 Analiza el codebase</div>
+            <span class="diagram-arrow">→</span>
+            <div class="diagram-step">📋 Crea un plan</div>
+            <span class="diagram-arrow">→</span>
+            <div class="diagram-step">✅ Espera aprobación</div>
+            <span class="diagram-arrow">→</span>
+            <div class="diagram-step">⚙️ Implementa cambios</div>
+            <span class="diagram-arrow">→</span>
+            <div class="diagram-step">🧪 Verifica y entrega</div>
+          </div>
+
+          <h2>Gestión de Sesiones</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Acción</th>
+                <th>Descripción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Detener</strong></td>
+                <td>Pausa la sesión del agente. Puedes reanudarla después.</td>
+              </tr>
+              <tr>
+                <td><strong>Checkpoint</strong></td>
+                <td>El agente crea snapshots automáticos antes de cada cambio mayor.</td>
+              </tr>
+              <tr>
+                <td><strong>Rewind</strong></td>
+                <td>Revierte al checkpoint anterior si los cambios no son satisfactorios.</td>
+              </tr>
+              <tr>
+                <td><strong>Branching</strong></td>
+                <td>Cada sesión trabaja en una rama separada para no afectar <code>main</code>.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="info-box concept">
+            <span class="box-icon">💡</span>
+            <div class="box-content">
+              <div class="box-title">Múltiples Sesiones</div>
+              <p>Puedes lanzar <strong>múltiples sesiones simultáneas</strong> en el mismo workspace o en diferentes
+                workspaces. Cada sesión tiene su propia rama y contexto independiente — esto es lo que permite el
+                paralelismo real.</p>
+            </div>
+          </div>
+
+          <div class="step-nav">
+            <button class="nav-btn" data-direction="prev">← Anterior</button>
+            <button class="nav-btn primary" data-direction="next">Siguiente: Editor y Worktrees →</button>
+          </div>
+        </div>
+
+        <!-- Step A5: Editor y Worktrees -->
+        <div class="step-section" data-step="a5">
+          <div class="step-header">
+            <div class="step-number">5</div>
+            <div class="step-meta">
+              <h1 class="step-title">Editor y Worktrees</h1>
+              <div class="step-duration">⏱ 3 minutos</div>
+            </div>
+          </div>
+          <div class="objectives">
+            <span class="objective-tag">🎯 Usar el editor integrado</span>
+            <span class="objective-tag">🎯 Entender el chat lateral del agente</span>
+            <span class="objective-tag">🎯 Conocer las limitaciones actuales</span>
+          </div>
+
+          <h2>El Editor de Antigravity</h2>
+          <p>El editor está basado en <strong>Monaco</strong> (el mismo motor de VS Code), lo que significa que ya
+            conoces la mayoría de los atajos:</p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Característica</th>
+                <th>Descripción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Sintaxis highlighting</strong></td>
+                <td>Soporte para todos los lenguajes populares</td>
+              </tr>
+              <tr>
+                <td><strong>Terminal integrada</strong></td>
+                <td>Ejecuta comandos directamente desde el editor</td>
+              </tr>
+              <tr>
+                <td><strong>Diffs visuales</strong></td>
+                <td>Visualiza los cambios del agente como diffs lado a lado</td>
+              </tr>
+              <tr>
+                <td><strong>Chat lateral</strong></td>
+                <td>Comunícate con el agente mientras ves el código</td>
+              </tr>
+              <tr>
+                <td><strong>Quick Open</strong></td>
+                <td><kbd>Cmd</kbd>+<kbd>P</kbd> para navegar archivos rápidamente</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>Chat del Agente en el Editor</h2>
+          <p>En el panel lateral del editor puedes interactuar con el agente en contexto:</p>
+          <div class="prompt-box">
+            <div class="prompt-label">💬 Tarea CRM — Editor</div>
+            <div class="prompt-text">@src/components/CustomerTable.tsx la tabla de clientes no muestra el status con
+              colores diferenciados. Agrega badges con colores para LEAD (amarillo), ACTIVE (verde) y CHURNED (rojo)
+              usando clases de Tailwind.</div><button class="copy-btn">📋 Copiar</button>
+          </div>
+
+          <h2>Revisando Cambios del Agente</h2>
+          <p>Cuando el agente hace cambios, los verás como:</p>
+          <ul>
+            <li>📝 <strong>Diffs inline</strong> — Cambios resaltados directamente en el archivo</li>
+            <li>✅ <strong>Botón "Accept"</strong> — Para aceptar los cambios propuestos</li>
+            <li>↩️ <strong>Botón "Revert"</strong> — Para rechazar y volver al estado anterior</li>
+            <li>💬 <strong>Comentar</strong> — Pide ajustes sin aceptar ni rechazar</li>
+          </ul>
+
+          <div class="info-box warning">
+            <span class="box-icon">⚠️</span>
+            <div class="box-content">
+              <div class="box-title">Limitación Actual</div>
+              <p>Google Antigravity <strong>no soporta Git worktrees</strong> en este momento. Cada workspace opera con
+                un solo working directory. Si necesitas trabajar en múltiples ramas simultáneamente, crea workspaces
+                separados.</p>
+            </div>
+          </div>
+
+          <h2>Sleep y Sesiones Activas</h2>
+          <p>Si un agente está ejecutándose, Antigravity <strong>evitará que tu computadora entre en modo sleep</strong>
+            para no interrumpir la tarea. Esto sucede automáticamente mientras haya una sesión activa.</p>
+
+          <div class="step-nav">
+            <button class="nav-btn" data-direction="prev">← Anterior</button>
+            <button class="nav-btn primary" data-direction="next">Siguiente: Artefactos y Paralelismo →</button>
+          </div>
+        </div>
+
+        <!-- Step A6: Artefactos y Paralelismo -->
+        <div class="step-section" data-step="a6">
+          <div class="step-header">
+            <div class="step-number">6</div>
+            <div class="step-meta">
+              <h1 class="step-title">Artefactos y Paralelismo</h1>
+              <div class="step-duration">⏱ 5 minutos</div>
+            </div>
+          </div>
+          <div class="objectives">
+            <span class="objective-tag">🎯 Entender los tipos de artefactos</span>
+            <span class="objective-tag">🎯 Lanzar agentes en paralelo</span>
+            <span class="objective-tag">🎯 Resolver silos de contexto</span>
+          </div>
+
+          <h2>Tipos de Artefactos</h2>
+          <p>En la orquestación asíncrona, el agente produce <strong>artefactos</strong> — documentos estructurados que
+            contienen su trabajo:</p>
+          <div class="card-grid">
+            <div class="card">
+              <div class="card-icon">📋</div>
+              <div class="card-title">Plan de Implementación</div>
+              <div class="card-desc">Análisis del problema, propuesta de cambios organizados por componente, plan de
+                verificación. Tú lo apruebas antes de que el agente ejecute.</div>
+            </div>
+            <div class="card">
+              <div class="card-icon">📝</div>
+              <div class="card-title">Diffs Visuales</div>
+              <div class="card-desc">Cambios de código mostrados como diffs con contexto: qué se cambió, por qué, y cómo
+                afecta al sistema.</div>
+            </div>
+            <div class="card">
+              <div class="card-icon">📸</div>
+              <div class="card-title">Screenshots de Validación</div>
+              <div class="card-desc">Capturas que demuestran que los cambios funcionan. El agente puede tomar
+                screenshots del UI o de resultados de tests.</div>
+            </div>
+            <div class="card">
+              <div class="card-icon">📊</div>
+              <div class="card-title">Walkthrough</div>
+              <div class="card-desc">Resumen final de qué se hizo, qué se probó, y resultados de validación.
+                Documentación del trabajo completado.</div>
+            </div>
+          </div>
+
+          <h2>Flujo de Trabajo con Artefactos</h2>
+          <div class="diagram-flow">
+            <div class="diagram-step">📝 Defines Tarea</div>
+            <span class="diagram-arrow">→</span>
+            <div class="diagram-step">📋 Agente Planifica</div>
+            <span class="diagram-arrow">→</span>
+            <div class="diagram-step">✅ Apruebas Plan</div>
+            <span class="diagram-arrow">→</span>
+            <div class="diagram-step">⚙️ Agente Ejecuta</div>
+            <span class="diagram-arrow">→</span>
+            <div class="diagram-step">📊 Revisas Artefactos</div>
+          </div>
+
+          <h2>Paralelismo de Agentes</h2>
+          <p>Una de las ventajas más poderosas de Antigravity es lanzar <strong>múltiples agentes en paralelo</strong>:
+          </p>
+          <div class="card-grid">
+            <div class="card">
+              <div class="card-icon">🐛</div>
+              <div class="card-title">Agente 1: Fix Bug #42</div>
+              <div class="card-desc">Investiga y corrige el bug reportado en el issue de GitHub.</div>
+            </div>
+            <div class="card">
+              <div class="card-icon">🧪</div>
+              <div class="card-title">Agente 2: Escribir Tests</div>
+              <div class="card-desc">Genera tests para el módulo de pagos.</div>
+            </div>
+            <div class="card">
+              <div class="card-icon">📄</div>
+              <div class="card-title">Agente 3: Documentación</div>
+              <div class="card-desc">Actualiza la documentación de la API.</div>
+            </div>
+          </div>
+          <p>Cada agente trabaja de forma independiente con su propia rama y ventana de contexto. Los resultados se
+            entregan como PRs independientes que puedes revisar y aprobar.</p>
+
+          <h2>El Problema del "Silo de Contexto"</h2>
+          <p>Cuando cada desarrollador tiene su propio historial de chat, la IA no aprende del equipo. La solución:</p>
+          <ul>
+            <li><strong>Project Knowledge (Harness):</strong> Fuentes de verdad compartidas (<code>.claude/rules</code>,
+              <code>CLAUDE.md</code> a nivel de organización)
+            </li>
+            <li><strong>Prompts como Infraestructura:</strong> Versionado de Skills en el repositorio para que todo el
+              equipo use los mismos estándares</li>
+            <li><strong>Artefactos Compartidos:</strong> El equipo colabora sobre el output generado (comentarios,
+              iteraciones, hand-off humano-máquina)</li>
+          </ul>
+
+          <div class="info-box tip">
+            <span class="box-icon">💡</span>
+            <div class="box-content">
+              <div class="box-title">Para la Clase</div>
+              <p>La diferencia clave con un chat es que los artefactos son <strong>documentos colaborativos</strong>:
+                puedes comentar, pedir cambios, y el agente los actualiza — similar a Google Docs pero para código.</p>
+            </div>
+          </div>
+
+          <div class="step-nav">
+            <button class="nav-btn" data-direction="prev">← Anterior</button>
+            <button class="nav-btn primary" data-direction="next">Siguiente: FAQ y Planes →</button>
+          </div>
+        </div>
+
+        <!-- Step A7: FAQ y Planes -->
+        <div class="step-section" data-step="a7">
+          <div class="step-header">
+            <div class="step-number">7</div>
+            <div class="step-meta">
+              <h1 class="step-title">FAQ, Planes y Soporte</h1>
+              <div class="step-duration">⏱ 3 minutos</div>
+            </div>
+          </div>
+          <div class="objectives">
+            <span class="objective-tag">🎯 Conocer los planes disponibles</span>
+            <span class="objective-tag">🎯 Resolver problemas comunes</span>
+            <span class="objective-tag">🎯 Saber sobre límites de uso y privacidad</span>
+          </div>
+
+          <h2>Planes de Acceso</h2>
+          <p>Google Antigravity está vinculado al ecosistema de Google AI. Existen varias formas de acceder:</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Plan</th>
+                <th>Acceso</th>
+                <th>Límites</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Google One AI Premium</strong></td>
+                <td>Cuenta personal con suscripción</td>
+                <td>Cuota estándar de uso</td>
+              </tr>
+              <tr>
+                <td><strong>Google Workspace AI Ultra</strong></td>
+                <td>Cuentas empresariales con add-on</td>
+                <td>Cuotas incrementadas para equipos</td>
+              </tr>
+              <tr>
+                <td><strong>GCP Project</strong></td>
+                <td>Solo por invitación a equipos seleccionados</td>
+                <td>Configuración personalizada</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Para más detalles sobre rate limits específicos, consulta la documentación de <a
+              href="https://antigravity.google/docs/plans" target="_blank">Planes</a>.</p>
+
+          <h2>Preguntas Frecuentes</h2>
+
+          <h3>¿Por qué no puedo autenticarme?</h3>
+          <ul>
+            <li>Antigravity está disponible para <strong>cuentas personales de Google</strong> en geografías aprobadas
+            </li>
+            <li>Si tienes problemas con cuentas Workspace, prueba con un @gmail.com</li>
+            <li>Debes ser mayor de 18 años. <a href="https://myaccount.google.com/age-verification"
+                target="_blank">Verifica tu edad aquí</a></li>
+          </ul>
+
+          <h3>¿Puedo usar Antigravity con herramientas de terceros?</h3>
+          <div class="info-box danger">
+            <span class="box-icon">🔒</span>
+            <div class="box-content">
+              <div class="box-title">Importante</div>
+              <p>Usar software de terceros (como Claude Code, OpenClaw, OpenCode) con tu login de Antigravity es una
+                <strong>violación de los Términos de Servicio</strong> y puede resultar en la suspensión de tu cuenta.
+                Si quieres usar un agente de terceros con Gemini, usa una API key de Vertex o AI Studio.
+              </p>
+            </div>
+          </div>
+
+          <h3>Privacidad y Datos</h3>
+          <p>Puedes <strong>optar por no compartir datos</strong> en cualquier momento desde el panel de Settings.
+            Consulta los <a href="https://antigravity.google/terms" target="_blank">Términos de Servicio</a> para
+            detalles completos.</p>
+
+          <h3>¿Se soportan Git Worktrees?</h3>
+          <p>No por el momento. Cada workspace opera con un solo working directory.</p>
+
+          <h3>¿Qué pasa cuando mi computadora entra en modo sleep?</h3>
+          <p>Si un agente está activo, Antigravity <strong>previene automáticamente</strong> que tu computadora entre en
+            modo sleep para no interrumpir la ejecución.</p>
+
+          <h2>Soporte</h2>
+          <p>Visita la <a href="https://antigravity.google/support" target="_blank">página de soporte</a> y las
+            comunidades oficiales.</p>
+
+          <div class="step-nav">
+            <button class="nav-btn" data-direction="prev">← Anterior</button>
+            <button class="nav-btn primary" data-direction="next">Siguiente: Taller Práctico →</button>
+          </div>
+        </div>
+
+        <!-- Step A8: Taller Práctico -->
+        <div class="step-section" data-step="a8">
+          <div class="step-header">
+            <div class="step-number">8</div>
+            <div class="step-meta">
+              <h1 class="step-title">Taller Práctico: Tu Primera Sesión en Antigravity</h1>
+              <div class="step-duration">⏱ 8 minutos</div>
+            </div>
+          </div>
+          <div class="objectives">
+            <span class="objective-tag">🎯 Crear tu primer workspace</span>
+            <span class="objective-tag">🎯 Lanzar y monitorear una sesión de agente</span>
+            <span class="objective-tag">🎯 Revisar artefactos y aprobar cambios</span>
+          </div>
+
+          <h2>Ejercicio 1: Setup del Workspace</h2>
+          <ol>
+            <li>Abre <strong>Antigravity</strong> y accede al <strong>Agent Manager</strong></li>
+            <li>Crea un nuevo workspace conectando un repositorio de GitHub o un proyecto local</li>
+            <li>Espera a que el agente indexe el código base</li>
+            <li>Explora la interfaz: sidebar de archivos, vista de sesiones, panel de artefactos</li>
+          </ol>
+
+          <h2>Ejercicio 2: Tu Primera Tarea</h2>
+          <p>Lanza una tarea sencilla para ver el flujo completo:</p>
+          <div class="prompt-box">
+            <div class="prompt-label">💬 Tarea CRM — Análisis Inicial</div>
+            <div class="prompt-text">Analiza la arquitectura del CRM: el schema de Prisma (Customer, Interaction, User),
+              las rutas de API en src/app/api/, y los componentes en src/components/. Dame un resumen del stack y
+              sugiere 3 mejoras prioritarias.</div><button class="copy-btn">📋 Copiar</button>
+          </div>
+
+          <p>Observa cómo el agente:</p>
+          <ul>
+            <li>📂 Escanea la estructura de archivos</li>
+            <li>📖 Lee archivos clave (package.json, configs, entry points)</li>
+            <li>📋 Genera un <strong>Plan de Implementación</strong> como artefacto</li>
+            <li>🧪 Propone cambios verificables</li>
+          </ul>
+
+          <h2>Ejercicio 3: Tarea con Implementación</h2>
+          <div class="prompt-box">
+            <div class="prompt-label">💬 Tarea CRM — Implementación</div>
+            <div class="prompt-text">Agrega validación de input al endpoint POST /api/interactions del CRM. Debe validar
+              que el customerId exista en la base de datos, que el campo 'type' sea uno de EMAIL/CALL/MEETING/NOTE, y
+              que 'notes' no esté vacío. Retorna errores 400 descriptivos.</div><button class="copy-btn">📋
+              Copiar</button>
+          </div>
+
+          <p>Para este ejercicio, practica:</p>
+          <ol>
+            <li><strong>Revisar el plan</strong> — ¿El agente entendió correctamente los requisitos?</li>
+            <li><strong>Aprobar con ajuste</strong> — Comenta pidiendo un cambio antes de aprobarlo</li>
+            <li><strong>Revisar diffs</strong> — Cambia al Editor con <kbd>Cmd</kbd>+<kbd>E</kbd> y revisa los cambios
+            </li>
+            <li><strong>Verificar tests</strong> — Confirma que los tests fueron creados y pasan</li>
+          </ol>
+
+          <h2>Ejercicio 4: Paralelismo</h2>
+          <p>Lanza <strong>dos sesiones simultáneas</strong> en el mismo workspace:</p>
+          <div class="card-grid">
+            <div class="card">
+              <div class="card-icon">📊</div>
+              <div class="card-title">Sesión A: Dashboard del CRM</div>
+              <div class="card-desc"><em>"Implementa un dashboard en src/app/page.tsx que muestre KPIs: total de
+                  clientes,
+                  clientes activos vs churned, e interacciones de la última semana. Usa Server Components y queries de
+                  Prisma"</em></div>
+            </div>
+            <div class="card">
+              <div class="card-icon">🔍</div>
+              <div class="card-title">Sesión B: Búsqueda de Clientes</div>
+              <div class="card-desc"><em>"Agrega filtrado por status (LEAD/ACTIVE/CHURNED) y búsqueda por nombre/email
+                  al endpoint GET /api/customers. Incluye query params y paginación"</em></div>
+            </div>
+          </div>
+          <p>Observa cómo cada sesión trabaja en su propia rama sin interferir con la otra.</p>
+
+          <h2>Checklist Final: ¿Completaste el Taller?</h2>
+          <ul>
+            <li>☐ Workspace creado y repositorio conectado</li>
+            <li>☐ Primera tarea de análisis completada y artefactos revisados</li>
+            <li>☐ Tarea de implementación con plan aprobado y código verificado</li>
+            <li>☐ Dos sesiones paralelas lanzadas exitosamente</li>
+            <li>☐ Navegación fluida entre Agent Manager y Editor (<kbd>Cmd</kbd>+<kbd>E</kbd>)</li>
+          </ul>
+
+          <div class="info-box concept">
+            <span class="box-icon">🎯</span>
+            <div class="box-content">
+              <div class="box-title">Entregables del Taller</div>
+              <p>1. Al menos un <strong>artefacto revisado y aprobado</strong> (plan de implementación o
+                walkthrough)<br>
+                2. Código implementado por el agente con <strong>tests pasando</strong><br>
+                3. Experiencia navegando entre <strong>Agent Manager ↔ Editor</strong></p>
+            </div>
+          </div>
+
+          <hr>
+
+          <h2>Recursos Adicionales</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Recurso</th>
+                <th>Link</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Documentación Oficial Antigravity</td>
+                <td><a href="https://antigravity.google/docs" target="_blank">antigravity.google/docs</a></td>
+              </tr>
+              <tr>
+                <td>Página de Descarga</td>
+                <td><a href="https://antigravity.google/download" target="_blank">antigravity.google/download</a></td>
+              </tr>
+              <tr>
+                <td>FAQ y Soporte</td>
+                <td><a href="https://antigravity.google/docs/faq" target="_blank">FAQ</a></td>
+              </tr>
+              <tr>
+                <td>Términos de Servicio</td>
+                <td><a href="https://antigravity.google/terms" target="_blank">Términos</a></td>
+              </tr>
+              <tr>
+                <td>Planes y Precios</td>
+                <td><a href="https://antigravity.google/docs/plans" target="_blank">Planes</a></td>
+              </tr>
+              <tr>
+                <td>Soporte / Comunidades</td>
+                <td><a href="https://antigravity.google/support" target="_blank">Soporte</a></td>
+              </tr>
+              <tr>
+                <td>Documentación Oficial Claude Code</td>
+                <td><a href="https://code.claude.com/docs" target="_blank">code.claude.com/docs</a></td>
+              </tr>
+              <tr>
+                <td>Discord Anthropic</td>
+                <td><a href="https://www.anthropic.com/discord" target="_blank">Community Discord</a></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="step-nav">
+            <button class="nav-btn" data-direction="prev">← Anterior</button>
+            <button class="nav-btn primary" data-direction="next" disabled>🎉 ¡Taller Completado!</button>
+          </div>
+        </div>
+      </div><!-- /module-antigravity -->
+
+    </main><!-- /main-content -->
+  </div><!-- /layout -->
+
+  <script src="app.js"></script>
+</body>
+
+</html>
